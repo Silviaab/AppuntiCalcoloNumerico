@@ -1,0 +1,1673 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (MiKTeX 21.6.28) (preloaded format=pdflatex 2021.7.11)  13 JUL 2021 11:51
+entering extended mode
+**./main.tex
+(main.tex
+LaTeX2e <2021-06-01> patch level 1
+L3 programming layer <2021-06-18>
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbook.cls
+Document Class: scrbook 2021/06/25 v3.34 KOMA-Script document class (book)
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrkbase.st
+y
+Package: scrkbase 2021/06/25 v3.34 KOMA-Script package (KOMA-Script-dependent b
+asics and keyval usage)
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrbase.sty
+Package: scrbase 2021/06/25 v3.34 KOMA-Script package (KOMA-Script-independent 
+basics and keyval usage)
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile.st
+y
+Package: scrlfile 2021/06/25 v3.34 KOMA-Script package (file load hooks)
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlfile-ho
+ok.sty
+Package: scrlfile-hook 2021/06/25 v3.34 KOMA-Script package (using LaTeX hooks)
+
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrlogo.sty
+Package: scrlogo 2021/06/25 v3.34 KOMA-Script package (logo)
+))) (C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+Applying: [2021/05/01] Usage of raw or classic option list on input line 252.
+Already applied: [0000/00/00] Usage of raw or classic option list on input line
+ 368.
+))
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\tocbasic.st
+y
+Package: tocbasic 2021/06/25 v3.34 KOMA-Script package (handling toc-files)
+\scr@dte@tocline@numberwidth=\skip47
+\scr@dte@tocline@numbox=\box50
+)
+Package tocbasic Info: babel extension for `toc' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 137.
+Package scrbook Info: You've used standard option `12pt'.
+(scrbook)             This is correct!
+(scrbook)             Internally I'm using `fontsize=12pt'.
+(scrbook)             If you'd like to set the option with \KOMAoptions,
+(scrbook)             you'd have to use `fontsize=12pt' there
+(scrbook)             instead of `12pt', too.
+Class scrbook Info: File `scrsize12pt.clo' used to setup font sizes on input li
+ne 2489.
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\scrsize12pt
+.clo
+File: scrsize12pt.clo 2021/06/25 v3.34 KOMA-Script font size class option (12pt
+)
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/koma-script\typearea.st
+y
+Package: typearea 2021/06/25 v3.34 KOMA-Script package (type area)
+\ta@bcor=\skip48
+\ta@div=\count182
+Package typearea Info: You've used standard option `a4paper'.
+(typearea)             This is correct!
+(typearea)             Internally I'm using `paper=a4'.
+(typearea)             If you'd like to set the option with \KOMAoptions,
+(typearea)             you'd have to use `paper=a4' there
+(typearea)             instead of `a4paper', too.
+\ta@hblk=\skip49
+\ta@vblk=\skip50
+\ta@temp=\skip51
+\footheight=\skip52
+Package typearea Info: These are the values describing the layout:
+(typearea)             DIV  = 12
+(typearea)             BCOR = 0.0pt
+(typearea)             \paperwidth      = 597.50793pt
+(typearea)              \textwidth      = 448.13095pt
+(typearea)              DIV departure   = -6%
+(typearea)              \evensidemargin = 27.31467pt
+(typearea)              \oddsidemargin  = -22.47766pt
+(typearea)             \paperheight     = 845.04694pt
+(typearea)              \textheight     = 635.5pt
+(typearea)              \topmargin      = -41.72441pt
+(typearea)              \headheight     = 18.125pt
+(typearea)              \headsep        = 21.75pt
+(typearea)              \topskip        = 12.0pt
+(typearea)              \footskip       = 50.75pt
+(typearea)              \baselineskip   = 14.5pt
+(typearea)              on input line 1742.
+)
+\c@part=\count183
+\c@chapter=\count184
+\c@section=\count185
+\c@subsection=\count186
+\c@subsubsection=\count187
+\c@paragraph=\count188
+\c@subparagraph=\count189
+\scr@dte@chapter@maxnumwidth=\skip53
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\chapter on input line 5714.
+\scr@dte@section@maxnumwidth=\skip54
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\section on input line 5725.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\section on input line 5725.
+\scr@dte@part@maxnumwidth=\skip55
+Class scrbook Info: using compatibility default `afterindent=true'
+(scrbook)           for `\part on input line 5734.
+\scr@dte@subsection@maxnumwidth=\skip56
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subsection on input line 5744.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subsection on input line 5744.
+\scr@dte@subsubsection@maxnumwidth=\skip57
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subsubsection on input line 5754.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subsubsection on input line 5754.
+\scr@dte@paragraph@maxnumwidth=\skip58
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\paragraph on input line 5765.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\paragraph on input line 5765.
+\scr@dte@subparagraph@maxnumwidth=\skip59
+Class scrbook Info: using compatibility default `runin=bysign'
+(scrbook)           for `\subparagraph on input line 5775.
+Class scrbook Info: using compatibility default `afterindent=bysign'
+(scrbook)           for `\subparagraph on input line 5775.
+\abovecaptionskip=\skip60
+\belowcaptionskip=\skip61
+\c@pti@nb@sid@b@x=\box51
+Package tocbasic Info: babel extension for `lof' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 6961.
+
+\scr@dte@figure@maxnumwidth=\skip62
+\c@figure=\count190
+Package tocbasic Info: babel extension for `lot' omitted
+(tocbasic)             because of missing \bbl@set@language on input line 6982.
+
+\scr@dte@table@maxnumwidth=\skip63
+\c@table=\count191
+Class scrbook Info: Redefining `\numberline' on input line 7155.
+\bibindent=\dimen138
+) (C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2021/02/14 v1.3d Input encoding file
+\inpenc@prehook=\toks17
+\inpenc@posthook=\toks18
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+Package: babel 2021/06/28 3.61 The Babel package
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.def
+File: babel.def 2021/06/28 3.61 Babel common definitions
+\babel@savecnt=\count192
+\U@D=\dimen139
+\l@unhyphenated=\language79
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+\bbl@readstream=\read2
+)
+\bbl@dirlevel=\count193
+
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of
+ babel
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/babel-italian\italian.l
+df
+Language: italian 2020/05/21 v.1.4.04 Italian support for the babel system
+\it@lettering=\count194
+\it@doublequoteactive=\count195
+\it@ISOcompliance=\count196
+))
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count197
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
+))
+\Gm@cnth=\count198
+\Gm@cntv=\count199
+\c@Gm@tempcnt=\count266
+\Gm@bindingoffset=\dimen140
+\Gm@wd@mp=\dimen141
+\Gm@odd@mp=\dimen142
+\Gm@even@mp=\dimen143
+\Gm@layoutwidth=\dimen144
+\Gm@layoutheight=\dimen145
+\Gm@layouthoffset=\dimen146
+\Gm@layoutvoffset=\dimen147
+\Gm@dimlist=\toks19
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/standalone\standalone.s
+ty
+Package: standalone 2018/03/26 v1.3a Package to include TeX sub-files with prea
+mbles
+ (C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/tools\shellesc.sty
+Package: shellesc 2019/11/08 v1.0c unified shell escape interface for LaTeX
+Package shellesc Info: Restricted shell escape enabled on input line 77.
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2020/11/20 v2.8 package option processing (HA)
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks20
+\XKV@tempa@toks=\toks21
+)
+\XKV@depth=\count267
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/currfile\currfile.sty
+Package: currfile 2020/09/29 v0.7d Provides the file path elements of the curre
+nt input file
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2020-10-07 v3.14 Key value format for package options (HO)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.s
+ty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+))
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/filehook\filehook.sty
+Package: filehook 2020/09/29 v0.8a Hooks for input files
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/filehook\filehook-2020.
+sty
+Package: filehook-2020 2020/09/29 v0.8a Hooks for input files
+))
+\c@currfiledepth=\count268
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/gincltex\gincltex.sty
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/svn-prov\svn-prov.sty
+Package: svn-prov 2010/04/24 v3.1862 Package Date/Version from SVN Keywords
+)
+Package: gincltex 2011/09/04 v0.3 Include external LaTeX files like graphics
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjustbox.sty
+Package: adjustbox 2020/08/19 v1.3 Adjusting TeX boxes (trim, clip, ...)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\adjcalc.sty
+Package: adjcalc 2012/05/16 v1.1 Provides advanced setlength with multiple back
+-ends (calc, etex, pgfmath)
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\trimclip.sty
+Package: trimclip 2020/08/19 v1.2 Trim and clip general TeX material
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2020/12/05 v1.2c Enhanced LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2021/03/04 v1.4d Standard LaTeX Graphics (DPC,SPQR)
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.c
+fg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen148
+\Gin@req@width=\dimen149
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/collectbox\collectbox.s
+ty
+Package: collectbox 2012/05/17 v0.4b Collect macro arguments as boxes
+\collectedbox=\box52
+)
+\tc@llx=\dimen150
+\tc@lly=\dimen151
+\tc@urx=\dimen152
+\tc@ury=\dimen153
+Package trimclip Info: Using driver 'tc-pdftex.def'.
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/adjustbox\tc-pdftex.def
+File: tc-pdftex.def 2019/01/04 v2.2 Clipping driver for pdftex
+))
+\adjbox@Width=\dimen154
+\adjbox@Height=\dimen155
+\adjbox@Depth=\dimen156
+\adjbox@Totalheight=\dimen157
+\adjbox@pwidth=\dimen158
+\adjbox@pheight=\dimen159
+\adjbox@pdepth=\dimen160
+\adjbox@ptotalheight=\dimen161
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
+Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
+\c@checkoddpage=\count269
+) (C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/varwidth\varwidth.sty
+Package: varwidth 2009/03/30 ver 0.92;  Variable-width minipages
+\@vwid@box=\box53
+\sift@deathcycles=\count270
+\@vwid@loff=\dimen162
+\@vwid@roff=\dimen163
+))
+\gincltex@box=\box54
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/filemod\filemod-expmin.
+sty
+Package: filemod-expmin 2011/09/19 v1.2 Get and compare file modification times
+ (expandable; minimal)
+))
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+Package: amsmath 2021/04/20 v2.17j AMS math features
+\@mathmargin=\skip64
+
+For additional information on amsmath, use the `?' option.
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
+\@emptytoks=\toks22
+\ex@=\dimen164
+))
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+\pmbraise@=\dimen165
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
+)
+\inf@bad=\count271
+LaTeX Info: Redefining \frac on input line 234.
+\uproot@=\count272
+\leftroot@=\count273
+LaTeX Info: Redefining \overline on input line 399.
+\classnum@=\count274
+\DOTSCASE@=\count275
+LaTeX Info: Redefining \ldots on input line 496.
+LaTeX Info: Redefining \dots on input line 499.
+LaTeX Info: Redefining \cdots on input line 620.
+\Mathstrutbox@=\box55
+\strutbox@=\box56
+\big@size=\dimen166
+LaTeX Font Info:    Redeclaring font encoding OML on input line 743.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 744.
+\macc@depth=\count276
+\c@MaxMatrixCols=\count277
+\dotsspace@=\muskip16
+\c@parentequation=\count278
+\dspbrk@lvl=\count279
+\tag@help=\toks23
+\row@=\count280
+\column@=\count281
+\maxfields@=\count282
+\andhelp@=\toks24
+\eqnshift@=\dimen167
+\alignsep@=\dimen168
+\tagshift@=\dimen169
+\tagwidth@=\dimen170
+\totwidth@=\dimen171
+\lineht@=\dimen172
+\@envbody=\toks25
+\multlinegap=\skip65
+\multlinetaggap=\skip66
+\mathdisplay@stack=\toks26
+LaTeX Info: Redefining \[ on input line 2923.
+LaTeX Info: Redefining \] on input line 2924.
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
+\symAMSa=\mathgroup4
+\symAMSb=\mathgroup5
+LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
+LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
+)) (C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amscls\amsthm.sty
+Package: amsthm 2020/05/29 v2.20.6
+\thm@style=\toks27
+\thm@bodyfont=\toks28
+\thm@headfont=\toks29
+\thm@notefont=\toks30
+\thm@headpunct=\toks31
+\thm@preskip=\skip67
+\thm@postskip=\skip68
+\thm@headsep=\skip69
+\dth@everypar=\toks32
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/xpatch\xpatch.sty
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+Package: expl3 2021-06-18 L3 programming layer (loader) 
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdf
+tex.def
+File: l3backend-pdftex.def 2021-05-07 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count283
+\l__pdf_internal_box=\box57
+))
+Package: xpatch 2020/03/25 v0.3a Extending etoolbox patching commands
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xpars
+e.sty
+Package: xparse 2021-06-18 L3 Experimental document command parser
+))
+Class scrbook Info: amsthm's \deferred@thm@head patched.
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/cancel\cancel.sty
+Package: cancel 2013/04/12 v2.2 Cancel math terms
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mathtools.sty
+Package: mathtools 2021/04/12 v1.27 mathematical typesetting tools
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/tools\calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count284
+\calc@Bcount=\count285
+\calc@Adimen=\dimen173
+\calc@Bdimen=\dimen174
+\calc@Askip=\skip70
+\calc@Bskip=\skip71
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count286
+\calc@Cskip=\skip72
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/mathtools\mhsetup.sty
+Package: mhsetup 2021/03/18 v1.4 programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 130.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 130.
+\g_MT_multlinerow_int=\count287
+\l_MT_multwidth_dim=\dimen175
+\origjot=\skip73
+\l_MT_shortvdotswithinadjustabove_dim=\dimen176
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen177
+\l_MT_above_intertext_sep=\dimen178
+\l_MT_below_intertext_sep=\dimen179
+\l_MT_above_shortintertext_sep=\dimen180
+\l_MT_below_shortintertext_sep=\dimen181
+\xmathstrut@box=\box58
+\xmathstrut@dim=\dimen182
+) (C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count288
+\float@exts=\toks33
+\float@box=\box59
+\@float@everytoks=\toks34
+\@floatcapt=\box60
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/enumitem\enumitem.sty
+Package: enumitem 2019/06/20 v3.9 Customized lists
+\labelindent=\skip74
+\enit@outerparindent=\dimen183
+\enit@toks=\toks35
+\enit@inbox=\box61
+\enit@count@id=\count289
+\enitdp@description=\count290
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.st
+y
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+ (C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks36
+\c@algorithm=\count291
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithmic.
+sty
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count292
+\c@ALC@line=\count293
+\c@ALC@rem=\count294
+\c@ALC@depth=\count295
+\ALC@tlm=\skip75
+\algorithmicindent=\skip76
+) (C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/ulem\ulem.sty
+\UL@box=\box62
+\UL@hyphenbox=\box63
+\UL@skip=\skip77
+\UL@hook=\toks37
+\UL@height=\dimen184
+\UL@pe=\count296
+\UL@pixel=\dimen185
+\ULC@box=\box64
+Package: ulem 2019/11/18
+\ULdepth=\dimen186
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/blkarray\blkarray.sty
+Package: blkarray 2015/02/27 v0.07 Block array (dpc)
+\c@BAenumi=\count297
+\BA@col=\count298
+\BA@block@cnt=\count299
+\BA@final@box=\box65
+\BA@first@box=\box66
+\BA@colsep=\dimen187
+\BA@ftn=\toks38
+\BAextrarowheight=\dimen188
+\BAextraheightafterhline=\dimen189
+\BAarrayrulewidth=\dimen190
+\BAdoublerulesep=\dimen191
+\BAfootskip=\dimen192
+\BA@dashbox=\box67
+\BA@ddashbox=\box68
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/import\import.sty
+Package: import 2020/04/01  v 6.2
+)
+No file main.aux.
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
+LaTeX Font Info:    ... okay on input line 34.
+LaTeX Info: Redefining \it@ocap on input line 34.
+LaTeX Info: Redefining \it@ccap on input line 34.
+
+File italian.ldf warning: 
+italian.ldf    With OT1 encoding guillemets are poorly faked
+italian.ldf    Use T1 encoding
+italian.ldf    or specify a font with command \CaporaliFrom
+italian.ldf    See the documentation concerning the babel-italian typesetting 
+italian.ldf    on input line 34.
+
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: twoside 
+* h-part:(L,W,R)=(51.21504pt, 495.07779pt, 51.21504pt)
+* v-part:(T,H,B)=(51.21504pt, 711.58266pt, 82.24915pt)
+* \paperwidth=597.50787pt
+* \paperheight=845.04684pt
+* \textwidth=495.07779pt
+* \textheight=711.58266pt
+* \oddsidemargin=-21.05495pt
+* \evensidemargin=-21.05495pt
+* \topmargin=-60.92995pt
+* \headheight=18.125pt
+* \headsep=21.75pt
+* \topskip=12.0pt
+* \footskip=50.75pt
+* \marginparwidth=74.68849pt
+* \marginparsep=12.8401pt
+* \columnsep=10.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidetrue
+* \@mparswitchtrue
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mk
+ii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count300
+\scratchdimen=\dimen193
+\scratchbox=\box69
+\nofMPsegments=\count301
+\nofMParguments=\count302
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count303
+\MPscratchDim=\dimen194
+\MPnumerator=\count304
+\makeMPintoPDFobject=\count305
+\everyMPtoPDFconversion=\toks40
+)
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-b
+ase.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.c
+fg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+<maths.png, id=1, 513.92pt x 513.92pt>
+File: maths.png Graphic file (type png)
+<use maths.png>
+Package pdftex.def Info: maths.png  used on input line 56.
+(pdftex.def)             Requested size: 66.81194pt x 66.81194pt.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 85.
+
+ (C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 85.
+
+
+(C:\Users\silvi\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
+
+
+
+{C:/Users/silvi/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./maths.png>]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [2]
+No file main.toc.
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+[3
+
+
+] [4
+
+
+]
+chapter 1.
+
+Class scrbook Warning: \float@addtolists detected!
+(scrbook)              Implementation of \float@addtolist became
+(scrbook)              deprecated in KOMA-Script v3.01 2008/11/14 and
+(scrbook)              has been replaced by several more flexible
+(scrbook)              features of package `tocbasic`.
+(scrbook)              Since Version 3.12 support for deprecated
+(scrbook)              \float@addtolist interface has been
+(scrbook)              restricted to only some of the KOMA-Script
+(scrbook)              features and been removed from others.
+(scrbook)              Loading of package `scrhack' may help to
+(scrbook)              avoid this warning, if you are using a
+(scrbook)              a package that still implements the
+(scrbook)              deprecated \float@addtolist interface.
+
+(lezione1/lezione1.tex [5] [6] [7]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8]
+Overfull \hbox (38.22092pt too wide) in paragraph at lines 158--160
+\OT1/cmr/m/n/12 In realta la tec-ni-ca di ap-pros-si-ma-zio-ne piu usa-ta non
+ e il tron-ca-men-to, bens l'|   [].
+ []
+
+[9]
+<lezione1//img1.png, id=50, 487.8225pt x 141.52875pt>
+File: lezione1//img1.png Graphic file (type png)
+<use lezione1//img1.png>
+Package pdftex.def Info: lezione1//img1.png  used on input line 180.
+(pdftex.def)             Requested size: 317.08086pt x 91.99258pt.
+ [10 <./lezione1//img1.png>]) [11] (lezione2/lezione2.tex [12]
+Overfull \hbox (12.1547pt too wide) detected at line 67
+\U/msb/m/n/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 b; t; L; U\OT1/cmr/m/n/12 ) = 
+\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 Q [] [] \
+OML/cmm/m/it/12  \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 sign\OT1/cmr/m/n/12 (\OML/
+cmm/m/it/12 \OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (0\OML/cmm/m/
+it/12 ; [][] [] []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12  \OML/cmm/m/it/12 b[] 
+; [] \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1/cmr/m/n/12 1
+\OML/cmm/m/it/12 ; [] ; b \OMS/cmsy/m/n/12   \OT1/cmr/m/n/12 1\OMS/cmsy/m/n/12 
+g \OML/cmm/m/it/12 ; [] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0 \OML/cmm/m/it/12
+ ; p \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 L; U\OT1/cmr/m/n/12 ]
+ \OMS/cmsy/m/n/12  \U/msb/m/n/12 Z\OMS/cmsy/m/n/12 g
+ []
+
+[13]
+Underfull \hbox (badness 10000) in paragraph at lines 103--106
+
+ []
+
+[14]) [15] (lezione3/lezione3.tex
+Overfull \hbox (19.48792pt too wide) detected at line 20
+\U/msb/m/n/12 F\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 b; t; L; U\OT1/cmr/m/n/12 ) = 
+\OMS/cmsy/m/n/12 f\OML/cmm/m/it/12  \OMS/cmsy/m/n/12 2 \U/msb/m/n/12 Q \OT1/cm
+r/m/n/12 : \OML/cmm/m/it/12  \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 sign\OT1/cmr/m
+/n/12 (\OML/cmm/m/it/12 \OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12  \OT1/cmr/m/n/12 (
+0\OML/cmm/m/it/12 ; [][] [] []\OT1/cmr/m/n/12 ) \OMS/cmsy/m/n/12  \OML/cmm/
+m/it/12 b[] ;  [] \OMS/cmsy/m/n/12 2 f\OT1/cmr/m/n/12 0\OML/cmm/m/it/12 ; \OT1
+/cmr/m/n/12 1\OML/cmm/m/it/12 ; [] ; b \OMS/cmsy/m/n/12   \OT1/cmr/m/n/12 1\OMS
+/cmsy/m/n/12 g \OML/cmm/m/it/12 ;  [] \OMS/cmsy/m/n/12 6\OT1/cmr/m/n/12 = 0 \O
+ML/cmm/m/it/12 ;  p \OMS/cmsy/m/n/12 2 \OT1/cmr/m/n/12 [\OML/cmm/m/it/12 L; U\O
+T1/cmr/m/n/12 ] \OMS/cmsy/m/n/12  \U/msb/m/n/12 Z\OMS/cmsy/m/n/12 g
+ []
+
+<lezione3//img2.png, id=73, 593.21625pt x 193.32225pt>
+File: lezione3//img2.png Graphic file (type png)
+<use lezione3//img2.png>
+Package pdftex.def Info: lezione3//img2.png  used on input line 30.
+(pdftex.def)             Requested size: 385.58598pt x 125.65797pt.
+<lezione3//img3.png, id=74, 587.19376pt x 182.48175pt>
+File: lezione3//img3.png Graphic file (type png)
+<use lezione3//img3.png>
+Package pdftex.def Info: lezione3//img3.png  used on input line 36.
+(pdftex.def)             Requested size: 381.67142pt x 118.61172pt.
+[16 <./lezione3//img2.png>]
+Underfull \vbox (badness 2020) has occurred while \output is active []
+
+ [17 <./lezione3//img3.png>] [18]
+<lezione3//img4.png, id=88, 531.1845pt x 195.73125pt>
+File: lezione3//img4.png Graphic file (type png)
+<use lezione3//img4.png>
+Package pdftex.def Info: lezione3//img4.png  used on input line 102.
+(pdftex.def)             Requested size: 345.26582pt x 127.22379pt.
+ [19 <./lezione3//img4.png>]
+<lezione3//img5.png, id=94, 433.62pt x 165.0165pt>
+File: lezione3//img5.png Graphic file (type png)
+<use lezione3//img5.png>
+Package pdftex.def Info: lezione3//img5.png  used on input line 126.
+(pdftex.def)             Requested size: 281.84966pt x 107.25943pt.
+<lezione3//img6.png, id=95, 533.5935pt x 198.7425pt>
+File: lezione3//img6.png Graphic file (type png)
+<use lezione3//img6.png>
+Package pdftex.def Info: lezione3//img6.png  used on input line 136.
+(pdftex.def)             Requested size: 346.83167pt x 129.18108pt.
+ [20 <./lezione3//img5.png> <./lezione3//img6.png>]
+<lezione3//img7.png, id=101, 518.53725pt x 156.585pt>
+File: lezione3//img7.png Graphic file (type png)
+<use lezione3//img7.png>
+Package pdftex.def Info: lezione3//img7.png  used on input line 143.
+(pdftex.def)             Requested size: 337.04521pt x 101.77904pt.
+<lezione3//img8.png, id=102, 540.8205pt x 130.086pt>
+File: lezione3//img8.png Graphic file (type png)
+<use lezione3//img8.png>
+Package pdftex.def Info: lezione3//img8.png  used on input line 146.
+(pdftex.def)             Requested size: 351.52914pt x 84.55489pt.
+<lezione3//img9.png, id=103, 563.10374pt x 140.32425pt>
+File: lezione3//img9.png Graphic file (type png)
+<use lezione3//img9.png>
+Package pdftex.def Info: lezione3//img9.png  used on input line 155.
+(pdftex.def)             Requested size: 366.01309pt x 91.20967pt.
+<lezione3//img10.png, id=104, 548.0475pt x 184.89075pt>
+File: lezione3//img10.png Graphic file (type png)
+<use lezione3//img10.png>
+Package pdftex.def Info: lezione3//img10.png  used on input line 163.
+(pdftex.def)             Requested size: 356.22665pt x 120.17754pt.
+ [21 <./lezione3//img7.png> <./lezione3//img8.png> <./lezione3//img9.png>])
+Underfull \hbox (badness 10000) in paragraph at lines 180--155
+
+ []
+
+
+Overfull \hbox (0.70178pt too wide) in paragraph at lines 180--155
+\OT1/cmr/m/n/12 Questo do-vreb-be far ca-pi-re quan-to ric-ca e la strut-tu-ra
+ del si-ste-ma floating-point a 64 bit (|   []
+ []
+
+[22 <./lezione3//img10.png>] [23] (lezione4/lezione4.tex
+<lezione4//img11.png, id=118, 309.5565pt x 59.0205pt>
+File: lezione4//img11.png Graphic file (type png)
+<use lezione4//img11.png>
+Package pdftex.def Info: lezione4//img11.png  used on input line 33.
+(pdftex.def)             Requested size: 201.20934pt x 38.36284pt.
+ [24 <./lezione4//img11.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 50--55
+
+ []
+
+[25] [26] [27] [28]
+Underfull \hbox (badness 10000) in paragraph at lines 145--148
+
+ []
+
+<lezione4//img12.png, id=137, 380.01974pt x 94.55325pt>
+File: lezione4//img12.png Graphic file (type png)
+<use lezione4//img12.png>
+Package pdftex.def Info: lezione4//img12.png  used on input line 162.
+(pdftex.def)             Requested size: 247.0099pt x 61.45888pt.
+[29 <./lezione4//img12.png>]) [30] (lezione5/lezione5.tex [31]
+Underfull \hbox (badness 10000) in paragraph at lines 43--48
+
+ []
+
+[32] [33]
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+
+ []
+
+[34] [35] [36]) [37] (lezione6/lezione6.tex
+Underfull \hbox (badness 10000) in paragraph at lines 20--22
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 30--35
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 36--37
+
+ []
+
+[38]
+Underfull \hbox (badness 10000) in paragraph at lines 43--49
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--53
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 57--60
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 62--63
+
+ []
+
+[39]
+Underfull \hbox (badness 10000) in paragraph at lines 93--102
+
+ []
+
+[40]
+Underfull \hbox (badness 10000) in paragraph at lines 102--106
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 106--111
+
+ []
+
+[41]
+Underfull \hbox (badness 10000) in paragraph at lines 125--127
+
+ []
+
+<lezione6//img13.png, id=180, 672.71326pt x 333.04425pt>
+File: lezione6//img13.png Graphic file (type png)
+<use lezione6//img13.png>
+Package pdftex.def Info: lezione6//img13.png  used on input line 128.
+(pdftex.def)             Requested size: 297.04968pt x 147.06334pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 138--142
+
+ []
+
+[42 <./lezione6//img13.png>]
+<lezione6//img14.png, id=185, 680.5425pt x 442.0515pt>
+File: lezione6//img14.png Graphic file (type png)
+<use lezione6//img14.png>
+Package pdftex.def Info: lezione6//img14.png  used on input line 145.
+(pdftex.def)             Requested size: 247.5389pt x 160.79097pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 159--163
+
+ []
+
+[43 <./lezione6//img14.png>] [44]) [45] (lezione7/lezione7.tex
+Underfull \hbox (badness 10000) in paragraph at lines 26--30
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--37
+
+ []
+
+[46]
+Underfull \hbox (badness 10000) in paragraph at lines 55--59
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 59--63
+
+ []
+
+[47] [48]
+Underfull \hbox (badness 10000) in paragraph at lines 94--97
+
+ []
+
+[49] [50]
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
+
+ []
+
+<lezione7//grafo1.png, id=214, 1003.49907pt x 464.4853pt>
+File: lezione7//grafo1.png Graphic file (type png)
+<use lezione7//grafo1.png>
+Package pdftex.def Info: lezione7//grafo1.png  used on input line 165.
+(pdftex.def)             Requested size: 247.5389pt x 114.57597pt.
+[51 <./lezione7//grafo1.png>]) [52]
+chapter 2.
+(lezione8/lezione8.tex
+<lezione8//1.JPG, id=221, 349.305pt x 127.97812pt>
+File: lezione8//1.JPG Graphic file (type jpg)
+<use lezione8//1.JPG>
+Package pdftex.def Info: lezione8//1.JPG  used on input line 26.
+(pdftex.def)             Requested size: 247.5389pt x 90.69324pt.
+<lezione8//2.JPG, id=222, 188.95593pt x 70.76437pt>
+File: lezione8//2.JPG Graphic file (type jpg)
+<use lezione8//2.JPG>
+Package pdftex.def Info: lezione8//2.JPG  used on input line 44.
+(pdftex.def)             Requested size: 148.52484pt x 55.62248pt.
+ [53
+
+
+ <./lezione8//1.JPG>]
+<lezione8//3.JPG, id=226, 353.06906pt x 173.14688pt>
+File: lezione8//3.JPG Graphic file (type jpg)
+<use lezione8//3.JPG>
+Package pdftex.def Info: lezione8//3.JPG  used on input line 48.
+(pdftex.def)             Requested size: 247.5389pt x 121.39485pt.
+<lezione8//4.JPG, id=227, 345.54094pt x 171.64125pt>
+File: lezione8//4.JPG Graphic file (type jpg)
+<use lezione8//4.JPG>
+Package pdftex.def Info: lezione8//4.JPG  used on input line 52.
+(pdftex.def)             Requested size: 247.5389pt x 122.96349pt.
+<lezione8//5.jpg, id=228, 347.04657pt x 240.9pt>
+File: lezione8//5.jpg Graphic file (type jpg)
+<use lezione8//5.jpg>
+Package pdftex.def Info: lezione8//5.jpg  used on input line 72.
+(pdftex.def)             Requested size: 148.52484pt x 103.09976pt.
+ [54 <./lezione8//2.JPG> <./lezione8//3.JPG> <./lezione8//4.JPG> <./lezione8//5
+.jpg>]
+<lezione8//pagina8_1.png, id=232, 191.21437pt x 85.82062pt>
+File: lezione8//pagina8_1.png Graphic file (type png)
+<use lezione8//pagina8_1.png>
+Package pdftex.def Info: lezione8//pagina8_1.png  used on input line 89.
+(pdftex.def)             Requested size: 148.52484pt x 66.66348pt.
+<lezione8//im_pag10.png, id=233, 838.13126pt x 379.4175pt>
+File: lezione8//im_pag10.png Graphic file (type png)
+<use lezione8//im_pag10.png>
+Package pdftex.def Info: lezione8//im_pag10.png  used on input line 102.
+(pdftex.def)             Requested size: 247.5389pt x 112.05455pt.
+ [55 <./lezione8//pagina8_1.png> <./lezione8//im_pag10.png>]
+<lezione8//6.png, id=239, 509.905pt x 136.51pt>
+File: lezione8//6.png Graphic file (type png)
+<use lezione8//6.png>
+Package pdftex.def Info: lezione8//6.png  used on input line 127.
+(pdftex.def)             Requested size: 247.5389pt x 66.27184pt.
+ [56 <./lezione8//6.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 154--156
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--158
+
+ []
+
+<lezione8//grafo4.png, id=244, 499.8675pt x 178.86826pt>
+File: lezione8//grafo4.png Graphic file (type png)
+<use lezione8//grafo4.png>
+Package pdftex.def Info: lezione8//grafo4.png  used on input line 159.
+(pdftex.def)             Requested size: 297.04968pt x 106.29828pt.
+[57]
+<lezione8//pag25.png, id=248, 413.74574pt x 68.6565pt>
+File: lezione8//pag25.png Graphic file (type png)
+<use lezione8//pag25.png>
+Package pdftex.def Info: lezione8//pag25.png  used on input line 181.
+(pdftex.def)             Requested size: 413.74474pt x 68.65631pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 184--188
+
+ []
+
+[58 <./lezione8//grafo4.png> <./lezione8//pag25.png>] [59]
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
+
+ []
+
+<lezione8//scatolanera.PNG, id=257, 414.95026pt x 75.8835pt>
+File: lezione8//scatolanera.PNG Graphic file (type png)
+<use lezione8//scatolanera.PNG>
+Package pdftex.def Info: lezione8//scatolanera.PNG  used on input line 226.
+(pdftex.def)             Requested size: 247.5389pt x 45.26875pt.
+[60 <./lezione8//scatolanera.PNG>]
+<lezione8//grafo3.png, id=262, 813.79031pt x 316.18124pt>
+File: lezione8//grafo3.png Graphic file (type png)
+<use lezione8//grafo3.png>
+Package pdftex.def Info: lezione8//grafo3.png  used on input line 245.
+(pdftex.def)             Requested size: 247.5389pt x 96.1722pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 250--251
+
+ []
+
+[61 <./lezione8//grafo3.png>]
+<lezione8//grafo2.png, id=267, 907.13907pt x 484.81125pt>
+File: lezione8//grafo2.png Graphic file (type png)
+<use lezione8//grafo2.png>
+Package pdftex.def Info: lezione8//grafo2.png  used on input line 271.
+(pdftex.def)             Requested size: 247.5389pt x 132.29153pt.
+) [62 <./lezione8//grafo2.png>]
+(lezione9/lezione9.tex
+<lezione9//pagina5_1.png, id=271, 511.15968pt x 213.04594pt>
+File: lezione9//pagina5_1.png Graphic file (type png)
+<use lezione9//pagina5_1.png>
+Package pdftex.def Info: lezione9//pagina5_1.png  used on input line 35.
+(pdftex.def)             Requested size: 357.80933pt x 149.13113pt.
+ [63 <./lezione9//pagina5_1.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 45--47
+
+ []
+
+<lezione9//pagina7.PNG, id=275, 896.75024pt x 228.25275pt>
+File: lezione9//pagina7.PNG Graphic file (type png)
+<use lezione9//pagina7.PNG>
+Package pdftex.def Info: lezione9//pagina7.PNG  used on input line 48.
+(pdftex.def)             Requested size: 448.37402pt x 114.12608pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 50--51
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 54--56
+
+ []
+
+[64 <./lezione9//pagina7.PNG>]
+<lezione9//pagina11_1.png, id=280, 797.98125pt x 445.665pt>
+File: lezione9//pagina11_1.png Graphic file (type png)
+<use lezione9//pagina11_1.png>
+Package pdftex.def Info: lezione9//pagina11_1.png  used on input line 75.
+(pdftex.def)             Requested size: 319.18684pt x 178.26283pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 83--84
+
+ []
+
+<lezione9//pagina12_1.PNG, id=281, 271.61475pt x 126.4725pt>
+File: lezione9//pagina12_1.PNG Graphic file (type png)
+<use lezione9//pagina12_1.PNG>
+Package pdftex.def Info: lezione9//pagina12_1.PNG  used on input line 85.
+(pdftex.def)             Requested size: 148.52484pt x 69.15868pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 87--89
+
+ []
+
+<lezione9//pagina12_2.PNG, id=282, 357.13425pt x 171.039pt>
+File: lezione9//pagina12_2.PNG Graphic file (type png)
+<use lezione9//pagina12_2.PNG>
+Package pdftex.def Info: lezione9//pagina12_2.PNG  used on input line 90.
+(pdftex.def)             Requested size: 148.52484pt x 71.13123pt.
+[65 <./lezione9//pagina11_1.png> <./lezione9//pagina12_1.PNG> <./lezione9//pagi
+na12_2.PNG>] [66]
+Underfull \vbox (badness 6141) has occurred while \output is active []
+
+ [67]
+Underfull \hbox (badness 10000) in paragraph at lines 156--161
+
+ []
+
+<lezione9//pagina25.PNG, id=296, 404.10976pt x 213.79875pt>
+File: lezione9//pagina25.PNG Graphic file (type png)
+<use lezione9//pagina25.PNG>
+Package pdftex.def Info: lezione9//pagina25.PNG  used on input line 162.
+(pdftex.def)             Requested size: 404.10876pt x 213.79822pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 164--166
+
+ []
+
+[68 <./lezione9//pagina25.PNG>] [69]
+Underfull \hbox (badness 10000) in paragraph at lines 221--224
+
+ []
+
+) [70] (lezione10/lezione10.tex
+Underfull \hbox (badness 10000) in paragraph at lines 49--54
+
+ []
+
+[71] [72]
+Underfull \hbox (badness 10000) in paragraph at lines 88--97
+
+ []
+
+[73] [74] [75]
+<lezione10//pag27.JPG, id=323, 460.119pt x 188.50426pt>
+File: lezione10//pag27.JPG Graphic file (type jpg)
+<use lezione10//pag27.JPG>
+Package pdftex.def Info: lezione10//pag27.JPG  used on input line 152.
+(pdftex.def)             Requested size: 247.5389pt x 101.41397pt.
+ [76 <./lezione10//pag27.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 181--185
+
+ []
+
+<lezione10//pag34.png, id=327, 724.20563pt x 269.50688pt>
+File: lezione10//pag34.png Graphic file (type png)
+<use lezione10//pag34.png>
+Package pdftex.def Info: lezione10//pag34.png  used on input line 188.
+(pdftex.def)             Requested size: 247.5389pt x 92.11638pt.
+[77 <./lezione10//pag34.png>]
+<lezione10//pag36.JPG, id=332, 741.52031pt x 219.82124pt>
+File: lezione10//pag36.JPG Graphic file (type jpg)
+<use lezione10//pag36.JPG>
+Package pdftex.def Info: lezione10//pag36.JPG  used on input line 208.
+(pdftex.def)             Requested size: 495.07779pt x 146.76627pt.
+ [78 <./lezione10//pag36.JPG>]) [79]
+(lezione11/lezione11.tex [80]
+<lezione11//img1_pag7.png, id=343, 716.6775pt x 368.37625pt>
+File: lezione11//img1_pag7.png Graphic file (type png)
+<use lezione11//img1_pag7.png>
+Package pdftex.def Info: lezione11//img1_pag7.png  used on input line 65.
+(pdftex.def)             Requested size: 247.5389pt x 127.23608pt.
+ [81 <./lezione11//img1_pag7.png>] [82]
+Underfull \hbox (badness 10000) in paragraph at lines 119--123
+
+ []
+
+<lezione11//pag16.png, id=351, 560.69475pt x 378.81525pt>
+File: lezione11//pag16.png Graphic file (type png)
+<use lezione11//pag16.png>
+Package pdftex.def Info: lezione11//pag16.png  used on input line 127.
+(pdftex.def)             Requested size: 396.06374pt x 267.585pt.
+
+Underfull \vbox (badness 2689) has occurred while \output is active []
+
+ [83]
+Underfull \hbox (badness 10000) in paragraph at lines 135--140
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 149--152
+
+ []
+
+[84 <./lezione11//pag16.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 188--189
+
+ []
+
+
+Overfull \hbox (12.673pt too wide) detected at line 189
+\OML/cmm/m/it/12 x[] \OT1/cmr/m/n/12 = \OML/cmm/m/it/12 \OT1/cmr/m/n/12 (\OML/
+cmm/m/it/12 x[]\OT1/cmr/m/n/12 ) = [] + \OML/cmm/m/it/12 []\OT1/cmr/m/n/12 (\O
+ML/cmm/m/it/12 \OT1/cmr/m/n/12 )(\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12   \OML/
+cmm/m/it/12 \OT1/cmr/m/n/12 ) + [](\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n/12   \OM
+L/cmm/m/it/12 \OT1/cmr/m/n/12 )[] + [] + [](\OML/cmm/m/it/12 x[] \OMS/cmsy/m/n
+/12   \OML/cmm/m/it/12 \OT1/cmr/m/n/12 )[] + [](\OML/cmm/m/it/12 x[] \OMS/cmsy
+/m/n/12   \OML/cmm/m/it/12 \OT1/cmr/m/n/12 )[]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 189--192
+
+ []
+
+[85]
+Underfull \hbox (badness 10000) in paragraph at lines 198--200
+
+ []
+
+[86]) [87] [88
+
+
+]
+chapter 3.
+(lezione12/lezione12.tex
+<lezione12//lez12_img1.png, id=372, 393.8715pt x 204.765pt>
+File: lezione12//lez12_img1.png Graphic file (type png)
+<use lezione12//lez12_img1.png>
+Package pdftex.def Info: lezione12//lez12_img1.png  used on input line 25.
+(pdftex.def)             Requested size: 247.5389pt x 128.6933pt.
+ [89 <./lezione12//lez12_img1.png>] [90] [91] [92]
+Underfull \hbox (badness 10000) in paragraph at lines 140--143
+
+ []
+
+<lezione12//lez12_img2.png, id=387, 372.1905pt x 112.62074pt>
+File: lezione12//lez12_img2.png Graphic file (type png)
+<use lezione12//lez12_img2.png>
+Package pdftex.def Info: lezione12//lez12_img2.png  used on input line 152.
+(pdftex.def)             Requested size: 297.04968pt x 89.8836pt.
+[93]
+Underfull \hbox (badness 10000) in paragraph at lines 174--181
+
+ []
+
+[94 <./lezione12//lez12_img2.png>]
+<lezione12//lez12_img3.png, id=395, 553.46774pt x 264.99pt>
+File: lezione12//lez12_img3.png Graphic file (type png)
+<use lezione12//lez12_img3.png>
+Package pdftex.def Info: lezione12//lez12_img3.png  used on input line 201.
+(pdftex.def)             Requested size: 396.06374pt x 189.63623pt.
+ [95 <./lezione12//lez12_img3.png>]
+<lezione12//lez12_img4.png, id=400, 470.9595pt x 120.45pt>
+File: lezione12//lez12_img4.png Graphic file (type png)
+<use lezione12//lez12_img4.png>
+Package pdftex.def Info: lezione12//lez12_img4.png  used on input line 217.
+(pdftex.def)             Requested size: 297.04968pt x 75.97394pt.
+ [96 <./lezione12//lez12_img4.png>]
+<lezione12//lez12_img5.png, id=405, 458.31226pt x 213.79875pt>
+File: lezione12//lez12_img5.png Graphic file (type png)
+<use lezione12//lez12_img5.png>
+Package pdftex.def Info: lezione12//lez12_img5.png  used on input line 236.
+(pdftex.def)             Requested size: 247.5389pt x 115.4757pt.
+) [97 <./lezione12//lez12_img5.png>]
+(lezione13/lezione13.tex
+Underfull \hbox (badness 10000) in paragraph at lines 42--45
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--45
+
+ []
+
+[98]
+<lezione13//img1_pag6.png, id=416, 639.38875pt x 168.63pt>
+File: lezione13//img1_pag6.png Graphic file (type png)
+<use lezione13//img1_pag6.png>
+Package pdftex.def Info: lezione13//img1_pag6.png  used on input line 52.
+(pdftex.def)             Requested size: 319.69359pt x 84.31479pt.
+ [99 <./lezione13//img1_pag6.png>] [100]
+<lezione13//lez13_img1.png, id=424, 634.7715pt x 207.174pt>
+File: lezione13//lez13_img1.png Graphic file (type png)
+<use lezione13//lez13_img1.png>
+Package pdftex.def Info: lezione13//lez13_img1.png  used on input line 123.
+(pdftex.def)             Requested size: 317.38496pt x 103.58673pt.
+ [101 <./lezione13//lez13_img1.png>] [102]
+<lezione13//lez13_img2.png, id=432, 531.78674pt x 159.59625pt>
+File: lezione13//lez13_img2.png Graphic file (type png)
+<use lezione13//lez13_img2.png>
+Package pdftex.def Info: lezione13//lez13_img2.png  used on input line 189.
+(pdftex.def)             Requested size: 425.42998pt x 127.67715pt.
+ [103] [104 <./lezione13//lez13_img2.png>]) [105]
+(lezione14/lezione14.tex
+<lezione14//calcolo.JPG, id=444, 437.38406pt x 152.06813pt>
+File: lezione14//calcolo.JPG Graphic file (type jpg)
+<use lezione14//calcolo.JPG>
+Package pdftex.def Info: lezione14//calcolo.JPG  used on input line 26.
+(pdftex.def)             Requested size: 218.69148pt x 76.03387pt.
+<lezione14//calcolo2.JPG, id=445, 431.36156pt x 226.59656pt>
+File: lezione14//calcolo2.JPG Graphic file (type jpg)
+<use lezione14//calcolo2.JPG>
+Package pdftex.def Info: lezione14//calcolo2.JPG  used on input line 30.
+(pdftex.def)             Requested size: 215.68025pt x 113.29799pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 32--33
+
+ []
+
+<lezione14//calcolo3.JPG, id=446, 435.12563pt x 253.69781pt>
+File: lezione14//calcolo3.JPG Graphic file (type jpg)
+<use lezione14//calcolo3.JPG>
+Package pdftex.def Info: lezione14//calcolo3.JPG  used on input line 34.
+(pdftex.def)             Requested size: 217.56227pt x 126.84859pt.
+[106 <./lezione14//calcolo.JPG> <./lezione14//calcolo2.JPG> <./lezione14//calco
+lo3.JPG>]
+Underfull \hbox (badness 10000) in paragraph at lines 42--76
+
+ []
+
+
+Overfull \hbox (0.2741pt too wide) in paragraph at lines 42--76
+[]$ $[]$ $[]$ 
+ []
+
+[107] [108]
+Underfull \hbox (badness 10000) in paragraph at lines 138--140
+
+ []
+
+<lezione14//img_pag18.png, id=456, 692.5875pt x 250.68657pt>
+File: lezione14//img_pag18.png Graphic file (type png)
+<use lezione14//img_pag18.png>
+Package pdftex.def Info: lezione14//img_pag18.png  used on input line 148.
+(pdftex.def)             Requested size: 277.03009pt x 100.27284pt.
+[109 <./lezione14//img_pag18.png>]
+<lezione14//img_pag23.png, id=461, 765.86125pt x 300.12125pt>
+File: lezione14//img_pag23.png Graphic file (type png)
+<use lezione14//img_pag23.png>
+Package pdftex.def Info: lezione14//img_pag23.png  used on input line 165.
+(pdftex.def)             Requested size: 306.33907pt x 120.04637pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 178--180
+
+ []
+
+[110 <./lezione14//img_pag23.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 209--212
+
+ []
+
+[111]
+Underfull \hbox (badness 10000) in paragraph at lines 242--247
+
+ []
+
+) [112] (lezione15/lezione15.tex
+<lezione15//pag2.png, id=472, 487.8225pt x 201.75375pt>
+File: lezione15//pag2.png Graphic file (type png)
+<use lezione15//pag2.png>
+Package pdftex.def Info: lezione15//pag2.png  used on input line 26.
+(pdftex.def)             Requested size: 341.47342pt x 141.22665pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--32
+
+ []
+
+<lezione15//pag3.png, id=473, 522.15076pt x 169.8345pt>
+File: lezione15//pag3.png Graphic file (type png)
+<use lezione15//pag3.png>
+Package pdftex.def Info: lezione15//pag3.png  used on input line 33.
+(pdftex.def)             Requested size: 365.50304pt x 118.88333pt.
+[113 <./lezione15//pag2.png> <./lezione15//pag3.png>] [114]
+<lezione15//calcolo12.JPG, id=482, 496.10344pt x 368.1253pt>
+File: lezione15//calcolo12.JPG Graphic file (type jpg)
+<use lezione15//calcolo12.JPG>
+Package pdftex.def Info: lezione15//calcolo12.JPG  used on input line 92.
+(pdftex.def)             Requested size: 347.27003pt x 257.68596pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--99
+
+ []
+
+[115 <./lezione15//calcolo12.JPG>] [116] [117] [118] [119]
+<lezione15//calcolo32.JPG, id=499, 478.03593pt x 140.02313pt>
+File: lezione15//calcolo32.JPG Graphic file (type jpg)
+<use lezione15//calcolo32.JPG>
+Package pdftex.def Info: lezione15//calcolo32.JPG  used on input line 363.
+(pdftex.def)             Requested size: 334.62286pt x 98.01552pt.
+) [120 <./lezione15//calcolo32.JPG>]
+chapter 4.
+(lezione16/lezione16.tex [121
+
+
+]
+<lezione16//calcolo5.JPG, id=507, 545.03625pt x 362.85562pt>
+File: lezione16//calcolo5.JPG Graphic file (type jpg)
+<use lezione16//calcolo5.JPG>
+Package pdftex.def Info: lezione16//calcolo5.JPG  used on input line 53.
+(pdftex.def)             Requested size: 327.02428pt x 217.71504pt.
+<lezione16//calcolo55.JPG, id=508, 535.2497pt x 264.99pt>
+File: lezione16//calcolo55.JPG Graphic file (type jpg)
+<use lezione16//calcolo55.JPG>
+Package pdftex.def Info: lezione16//calcolo55.JPG  used on input line 57.
+(pdftex.def)             Requested size: 321.15228pt x 158.99522pt.
+ [122 <./lezione16//calcolo5.JPG> <./lezione16//calcolo55.JPG>] [123]
+Overfull \hbox (23.62755pt too wide) in paragraph at lines 133--135
+\OT1/cmr/m/n/12 (dove $ [] []$ e l'in-ter-po-la-zio-ne lo-ca-le di gra-do $\OM
+S/cmsy/m/n/12  \OML/cmm/m/it/12 s$ \OT1/cmr/m/n/12 sul trat-to $[\OML/cmm/m/it
+/12 x[]; x[]\OT1/cmr/m/n/12 ]$ cioe $ [] [](\OML/cmm/m/it/12 x\OT1/cmr/m/n/12 
+) = [][] \OML/cmm/m/it/12 y[]l[]\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 x\OT1/cmr/m/n
+/12 )$,
+ []
+
+[124]
+<lezione16//pag17.png, id=518, 672.111pt x 328.8285pt>
+File: lezione16//pag17.png Graphic file (type png)
+<use lezione16//pag17.png>
+Package pdftex.def Info: lezione16//pag17.png  used on input line 162.
+(pdftex.def)             Requested size: 346.55293pt x 169.55177pt.
+<lezione16//pag18.png, id=519, 726.91576pt x 371.58826pt>
+File: lezione16//pag18.png Graphic file (type png)
+<use lezione16//pag18.png>
+Package pdftex.def Info: lezione16//pag18.png  used on input line 163.
+(pdftex.def)             Requested size: 346.55293pt x 177.15262pt.
+
+Underfull \vbox (badness 4686) has occurred while \output is active []
+
+ [125]
+[126 <./lezione16//pag17.png> <./lezione16//pag18.png>]
+<lezione16//pag21.png, id=529, 681.747pt x 264.99pt>
+File: lezione16//pag21.png Graphic file (type png)
+<use lezione16//pag21.png>
+Package pdftex.def Info: lezione16//pag21.png  used on input line 202.
+(pdftex.def)             Requested size: 396.06374pt x 153.94904pt.
+ [127 <./lezione16//pag21.png>]
+Overfull \hbox (7.81282pt too wide) in paragraph at lines 235--238
+\OT1/cmr/m/n/12 Invece se le for-mu-le so-no ot-te-nu-te in-ter-pre-tan-do il p
+o-li-no-mio in-ter-po-la-to-re su no-di di ti-po |   []
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 235--238
+
+ []
+
+[128] [129]) [130] (lezione17/lezione17.tex
+<lezione17//calcolo55.JPG, id=544, 535.2497pt x 264.99pt>
+File: lezione17//calcolo55.JPG Graphic file (type jpg)
+<use lezione17//calcolo55.JPG>
+Package pdftex.def Info: lezione17//calcolo55.JPG  used on input line 45.
+(pdftex.def)             Requested size: 321.15228pt x 158.99522pt.
+<lezione17//lez17_img2.JPG, id=545, 466.74374pt x 302.63063pt>
+File: lezione17//lez17_img2.JPG Graphic file (type jpg)
+<use lezione17//lez17_img2.JPG>
+Package pdftex.def Info: lezione17//lez17_img2.JPG  used on input line 49.
+(pdftex.def)             Requested size: 233.37129pt x 151.31494pt.
+ [131 <./lezione17//calcolo55.JPG>]
+[132 <./lezione17//lez17_img2.JPG>] [133]
+<lezione17//lez17_pag15.png, id=556, 451.08525pt x 236.082pt>
+File: lezione17//lez17_pag15.png Graphic file (type png)
+<use lezione17//lez17_pag15.png>
+Package pdftex.def Info: lezione17//lez17_pag15.png  used on input line 133.
+(pdftex.def)             Requested size: 225.54207pt x 118.0407pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 151--156
+
+ []
+
+[134 <./lezione17//lez17_pag15.png>] [135] [136]
+<lezione17//lez17_pag29.png, id=567, 606.46574pt x 354.123pt>
+File: lezione17//lez17_pag29.png Graphic file (type png)
+<use lezione17//lez17_pag29.png>
+Package pdftex.def Info: lezione17//lez17_pag29.png  used on input line 278.
+(pdftex.def)             Requested size: 297.04968pt x 173.45694pt.
+ [137 <./lezione17//lez17_pag29.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 309--313
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 316--317
+
+ []
+
+) [138] (lezione18/lezione18.tex
+Underfull \hbox (badness 10000) in paragraph at lines 48--51
+
+ []
+
+[139] [140]
+Underfull \hbox (badness 10000) in paragraph at lines 163--167
+
+ []
+
+[141]
+Underfull \hbox (badness 10000) in paragraph at lines 172--181
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 192--196
+
+ []
+
+[142] [143]
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 276--278
+
+ []
+
+[144] [145] [146]
+Underfull \hbox (badness 10000) in paragraph at lines 436--441
+
+ []
+
+[147]) [148] [149] [150
+
+
+]
+chapter 5.
+(lezione19/lezione19.tex [151]
+Underfull \hbox (badness 10000) in paragraph at lines 77--79
+
+ []
+
+[152]
+<lezione19//pag14.png, id=621, 611.28375pt x 254.9525pt>
+File: lezione19//pag14.png Graphic file (type png)
+<use lezione19//pag14.png>
+Package pdftex.def Info: lezione19//pag14.png  used on input line 117.
+(pdftex.def)             Requested size: 305.64113pt x 127.47592pt.
+ [153 <./lezione19//pag14.png>] [154] [155]
+Underfull \hbox (badness 10000) in paragraph at lines 264--268
+
+ []
+
+[156]
+Underfull \hbox (badness 10000) in paragraph at lines 300--304
+
+ []
+
+[157]
+Underfull \hbox (badness 10000) in paragraph at lines 310--312
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 310--312
+
+ []
+
+<lezione19//lez19_img2.png, id=639, 402.303pt x 180.675pt>
+File: lezione19//lez19_img2.png Graphic file (type png)
+<use lezione19//lez19_img2.png>
+Package pdftex.def Info: lezione19//lez19_img2.png  used on input line 323.
+(pdftex.def)             Requested size: 201.151pt x 90.33727pt.
+[158 <./lezione19//lez19_img2.png>])
+Underfull \hbox (badness 10000) in paragraph at lines 384--331
+
+ []
+
+[159] (lezione20/lezione20.tex
+Underfull \hbox (badness 10000) in paragraph at lines 103--105
+
+ []
+
+[160] [161] [162] [163] [164]
+Underfull \hbox (badness 10000) in paragraph at lines 328--330
+
+ []
+
+[165] [166]
+<lezione20//lez20_pag35.png, id=669, 576.9555pt x 350.5095pt>
+File: lezione20//lez20_pag35.png Graphic file (type png)
+<use lezione20//lez20_pag35.png>
+Package pdftex.def Info: lezione20//lez20_pag35.png  used on input line 415.
+(pdftex.def)             Requested size: 288.47704pt x 175.25432pt.
+
+Underfull \vbox (badness 3118) has occurred while \output is active []
+
+ [167])
+[168 <./lezione20//lez20_pag35.png>] (lezione21/lezione21.tex
+<lezione21//lez21_pag4.jpg, id=677, 332.74312pt x 173.14688pt>
+File: lezione21//lez21_pag4.jpg Graphic file (type jpg)
+<use lezione21//lez21_pag4.jpg>
+Package pdftex.def Info: lezione21//lez21_pag4.jpg  used on input line 34.
+(pdftex.def)             Requested size: 166.37114pt x 86.57323pt.
+ [169 <./lezione21//lez21_pag4.jpg>] [170]
+<lezione21//lez21_pag16.jpg, id=685, 908.193pt x 436.029pt>
+File: lezione21//lez21_pag16.jpg Graphic file (type jpg)
+<use lezione21//lez21_pag16.jpg>
+Package pdftex.def Info: lezione21//lez21_pag16.jpg  used on input line 150.
+(pdftex.def)             Requested size: 346.55293pt x 166.37802pt.
+ [171]
+<lezione21//lez21_pag20.jpg, id=689, 859.41075pt x 370.38374pt>
+File: lezione21//lez21_pag20.jpg Graphic file (type jpg)
+<use lezione21//lez21_pag20.jpg>
+Package pdftex.def Info: lezione21//lez21_pag20.jpg  used on input line 169.
+(pdftex.def)             Requested size: 321.79753pt x 138.68445pt.
+ [172 <./lezione21//lez21_pag16.jpg> <./lezione21//lez21_pag20.jpg>]
+Underfull \hbox (badness 10000) in paragraph at lines 202--208
+
+ []
+
+[173]
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 209--210
+
+ []
+
+[174]) [175] (lezione22/lezione22.tex [176]
+<lezione22//lez22_pag6.JPG, id=706, 516.42938pt x 201.75375pt>
+File: lezione22//lez22_pag6.JPG Graphic file (type jpg)
+<use lezione22//lez22_pag6.JPG>
+Package pdftex.def Info: lezione22//lez22_pag6.JPG  used on input line 69.
+(pdftex.def)             Requested size: 258.21405pt x 100.87662pt.
+ [177 <./lezione22//lez22_pag6.JPG>]
+<lezione22//lez22_pag11.JPG, id=710, 547.2947pt x 453.94594pt>
+File: lezione22//lez22_pag11.JPG Graphic file (type jpg)
+<use lezione22//lez22_pag11.JPG>
+Package pdftex.def Info: lezione22//lez22_pag11.JPG  used on input line 139.
+(pdftex.def)             Requested size: 273.64667pt x 226.97241pt.
+[178 <./lezione22//lez22_pag11.JPG>]
+<lezione22//lez22_pag17.jpg, id=714, 567.92175pt x 219.219pt>
+File: lezione22//lez22_pag17.jpg Graphic file (type jpg)
+<use lezione22//lez22_pag17.jpg>
+Package pdftex.def Info: lezione22//lez22_pag17.jpg  used on input line 244.
+(pdftex.def)             Requested size: 247.5389pt x 95.55014pt.
+ [179]
+<lezione22//lez22_pag19.png, id=718, 340.27126pt x 183.68625pt>
+File: lezione22//lez22_pag19.png Graphic file (type png)
+<use lezione22//lez22_pag19.png>
+Package pdftex.def Info: lezione22//lez22_pag19.png  used on input line 310.
+(pdftex.def)             Requested size: 247.5389pt x 133.62737pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 312--315
+
+ []
+
+[180 <./lezione22//lez22_pag17.jpg> <./lezione22//lez22_pag19.png>]) [181]
+(lezione23/lezione23.tex
+<lezione23//lez23_pag1.png, id=726, 346.896pt x 66.84975pt>
+File: lezione23//lez23_pag1.png Graphic file (type png)
+<use lezione23//lez23_pag1.png>
+Package pdftex.def Info: lezione23//lez23_pag1.png  used on input line 19.
+(pdftex.def)             Requested size: 242.82553pt x 46.79448pt.
+ [182 <./lezione23//lez23_pag1.png>] [183] [184]
+[185] [186] [187]) [188] (lezione24/lezione24.tex [189] [190] [191]
+Underfull \vbox (badness 2644) has occurred while \output is active []
+
+ [192]
+[193]) [194] (main.aux) ) 
+Here is how much of TeX's memory you used:
+ 11822 strings out of 478847
+ 220272 string characters out of 2848386
+ 678679 words of memory out of 3000000
+ 29294 multiletter control sequences out of 15000+600000
+ 418879 words of font info for 85 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 125i,26n,122p,10628b,752s stack positions out of 5000i,500n,10000p,200000b,80000s
+{C:/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/en
+c/dvips/cm-super/cm-super-ts1.enc}<C:/Users/silvi/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/silvi/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx6.pfb><C:/Users/silvi/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmcsc10.pfb><C:/Users/silvi/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users
+/silvi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.
+pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/c
+m/cmmi10.pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmmi12.pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmmi6.pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX/fon
+ts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/silvi/AppData/Local/Programs/Mi
+KTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/silvi/AppData/Local/Pro
+grams/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/silvi/AppData/L
+ocal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/silvi/A
+ppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/
+silvi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:
+/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsl1
+2.pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmssbx10.pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/amsfonts/cm/cmsy10.pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/cm/cmsy6.pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX
+/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/silvi/AppData/Local/Program
+s/MiKTeX/fonts/type1/public/amsfonts/cm/cmti12.pfb><C:/Users/silvi/AppData/Loca
+l/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti8.pfb><C:/Users/silvi/AppD
+ata/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt12.pfb><C:/Users/s
+ilvi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt8.pfb><C:
+/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/latxfont
+/line10.pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/type1/public/am
+sfonts/symbols/msam10.pfb><C:/Users/silvi/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/amsfonts/symbols/msbm10.pfb><C:/Users/silvi/AppData/Local/Programs/
+MiKTeX/fonts/type1/public/cm-super/sfrm1200.pfb>
+Output written on main.pdf (194 pages, 3272024 bytes).
+PDF statistics:
+ 886 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 386 words of extra memory for PDF output out of 10000 (max. 10000000)
+

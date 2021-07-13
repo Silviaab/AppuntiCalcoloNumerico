@@ -1,0 +1,175 @@
+\documentclass[12pt]{article}
+\DeclareMathSizes{12}{13}{10}{9}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm} % allows example and proof environment to be defined/used
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+\newtheorem*{esempio}{Esempio}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+\begin{document}
+
+\section{Lezione 5 - Esempi di instabilità della sottrazione}
+Nella scorsa lezione abbiamo analizzato la risposta delle operazioni aritmetiche agli errori sui dati. \\
+In particolare, dati $x, y \in \mathbb{R} \quad \Tilde{x} \approx x,\, \Tilde{y}\approx y$, i risultati ottenuti si possono sintetizzare con la disuguaglianza 
+\[\varepsilon_{x \bigstar y} \le w_1\varepsilon_x + w_2\varepsilon_y\] 
+dove $\varepsilon_{x \bigstar y}$ è l’errore relativo il risultato dell'operazione $\bigstar$ e $\varepsilon_x,\,\varepsilon_y$ gli errori relativi sui dati. \\
+I PESI $w_1, w_2 > 0$ possono dipendere da $x,y$ (ma \uline{non} dagli errori).\\
+Nel caso di moltiplicazione, divisione e addizione si ha $w_1, w_2 \approx 1$ oppure $w_1, w_2 \le 1$ quindi tali operazioni risultano STABILI.\\
+Nel caso della sottrazione i pesi \[w_1 = \frac{\abs{\,x\,}}{\abs{\,x + y\,}}, \quad w_2 = \frac{\abs{\,y\,}}{\abs{\,x + y\,}}\] con $sign(x)=-sign(y)$ \uline{possono} essere invece grandi.\\
+Questo accade in particolare se $x$ e $y$ sono “vicini” in termini relativi, ovvero $\abs{\,x+y\,} \ll \abs{\,x\,},\abs{\,y\,}$ quindi la SOTTRAZIONE è POTENZIALMENTE INSTABILE e in grado di diminuire in modo consistente nel risultato la precisione dei dati e anche di distruggerla completamente, rendendo il risultato praticamente privo di significato (quando $w_1,w_2 > \max \left \{ \frac{1}{\varepsilon_x},\frac{1}{\varepsilon_y} \right \}$ per cui ci si può attendere un errore $> 100\%$).\\
+Faremo ora alcuni esempi significativi di perdita di precisione dovuta ad instabilità della sottrazione, lavoreremo come sempre per semplicità in sistemi floating-point virtuali in base 10.
+
+\subsection{Esempio 1}
+Consideriamo $\mathbb{F}(10,4,L,U)$ (con $L,U$ sufficienti per rappresentare i numeri che ci interessano) e \[x = 0,10016\]  \[y = -0,10012\]
+allora \[\Tilde{x} = fl^4(x) = 0,1002\]  \[\Tilde{y} = fl^4(y) = -0,1001\]
+eseguendo l’operazione-macchina di somma algebrica (che è una sottrazione visto che $x$ e $y$ hanno segno opposto) si ottiene
+\[\begin{split}
+    x \oplus y & = fl^4(fl^4(x) + fl^4(y)) \\
+    & = fl^4(0,1002 -0,1001) \\
+    & = 10^{-4}
+\end{split}\]
+scriveremo spesso i numeri in notazione standard per comodità) \\
+Invece \[x+y=4 \cdot 10^{-5}\] quindi l’errore relativo nel risultato è
+\[ \frac{\abs{\,(x+y)-(x+y)\,}}{\abs{\,x+y\,}} = \frac{\abs{\,4 \cdot 10^{-5} - 10^{-4}\,}}{4 \cdot10^{-5}} = \frac{6 \cdot 10^{-5}}{4 \cdot 10^{-5}} = \frac{3}{2} = 150\%\]
+a fronte di $\varepsilon_x, \varepsilon_y \le \varepsilon_M = \frac{10^{-3}}{2}$ abbiamo un errore del $150\%$ e una perdita di precisione di ben 3 ordini di grandezza rispetto alla precisione di macchina.\\
+Qui il problema sta nella sottrazione tra numeri vicini, visto che $x+y=4 \cdot 10^{-5}$ ma $\abs{\,x\,},\abs{\,y\,} \approx 10^{-1}$\\
+Infatti se calcoliamo i pesi 
+\[ w_1 = \frac{\abs{\,x\,}}{\abs{\,x+y\,}} \approx \frac{10^{-1}}{4 \cdot 10^{-5}} = \frac{10^4}{4} = 2500\] e analogamente $w_2 \approx 2500$\\
+Questi fattori di amplificazione degli errori sui dati sono dell'ordine di $10^3$ e spiegano come si arrivi ad un errore finale $>100\%$, che rende inaccettabile in pratica il risultato. In questo caso i fattori di amplificazione non sono enormi, ma sono comunque $> \frac{1}{\varepsilon_M}$. \\
+Osserviamo che bastava una 1 cifra di mantissa in più per avere il risultato esatto, perchè con $t=5$ non ci sarebbe stato bisogno di arrotondare $x$ e $y$ e quindi $\varepsilon_x = \varepsilon_y = 0$. 
+\newline \newline
+Questo ci apre la strada all'analisi del prossimo esempio, un po’ più sofisticato.
+
+\subsection{Esempio 2}
+Consideriamo $\mathbb{F}(10,8,L,U)$ (con $L$ e $U$ appropriati) qui $t=8$ e $\varepsilon_M = \frac{10^{-7}}{2}$. \\
+Si tratta di calcolare in questa aritmetica floating-point la somma algebrica $a+b+c$ dove \[a=0,23371258 \cdot 10^{-4}\] \[b=0,33678429 \cdot 10^2\] \[c=-0,33677811 \cdot 10^2\] osserviamo che 
+\[fl^8(a+b+c)=0,64137126 \cdot 10^{-3}\]
+Vedremo ora che in questo esempio \uline{non} vale la proprietà \uline{associativa}, infatti
+\[\begin{split}
+    I & = (a \oplus b) \oplus c \\
+    & = 0,33678452 \cdot 10^2 \oplus (-0,33677811 \cdot 10^2)\\
+    & = 0,64100000 \cdot 10^{-3}
+\end{split}\]
+invece
+\[\begin{split}
+    II & = a \oplus (b \oplus c) \\
+    & = 0,23371258 \cdot 10^{-4} \oplus 0,61800000 \cdot 10^{-3})\\
+    & = 0,64137126 \cdot 10^{-3}
+\end{split}\]
+quindi $I \ne II$; inoltre si verifica (ad esempio in Matlab cioè sostanzialmente a 16 cifre decimali) che $II = fl^8(a+b+c)$ cioè il risultato $II$ è il meglio che si può ottenere in questa aritmetica floating-point, mentre l’errore relativo di $I$ è 
+\[\frac{\abs{\,I-(a+b+c)\,}}{\abs{\,a+b+c\,}} \approx \frac{4 \cdot 10^{-7}}{0,6 \cdot 10^{-3}} = \frac{2}{3} \cdot 10^{-3} \approx 0,07\%\] 
+qui riusciamo subito a spiegare la perdita di precisione di 4 ordini di grandezza rispetto a $\varepsilon_M = \frac{10^{-7}}{2}$, calcolando i pesi $w_1$ e $w_2$ associati alla \uline{sottrazione} $(a+b)+c$, visto che $a+b$ e $c$ sono vicini in termini relativi (hanno le prime 4 cifre significative coincidenti)
+\[w_1 = \frac{\abs{\,x\,}}{\abs{\,x+y\,}} = \frac{\abs{\,a+b\,}}{\abs{\,a+b+c\,}} \approx\frac{0,3 \cdot 10^2}{0,6 \cdot10^{-3}} = \frac{1}{2} \cdot 10^5 = 50000\]
+analogamente
+\[w_2 = \frac{\abs{\,c\,}}{\abs{\,a+b+c\,}}\approx 50000\]
+Si osservi che in queste stime abbiamo lavorato con 1 cifra significativa, sia con gli errori che con i pesi, perché di queste quantità non ci interessa il valore accurato ma solo l’ordine di grandezza.\\
+Naturalmente, anche nel caso $II$ c’è una sottrazione che viene fatta subito, ovvero $b+c$.\\
+Posto $x=b$, $y=c$ si ha \[w_1 = \frac{\abs{\,b\,}}{\abs{\,b+c\,}} \approx \frac{0,3 \cdot 10^2}{0,6 \cdot 10^{-3}} = 50000\] 
+e analogamente \[w_2 = \frac{\abs{\,c\,}}{\abs{\,b+c\,}} \approx 50000\]
+ma allora, perché con l’espressione di calcolo $II$ non c’è perdita di precisione?\\
+La spiegazione è sottile e sta nel fatto che i numeri $a, b, c$ entrano con 8 cifre significative e non occorre arrotondarli, cioè $\varepsilon_a = \varepsilon_b = \varepsilon_c = 0$ quindi la sottrazione $b+c$ non perde precisione (invece ne perderebbe se $b$ oppure $c$ fossero arrotondati).\\
+Invece, nell'espressione di calcolo $I$, la sottrazione avviene con uno dei due dati arrotondato, ovvero $a+b$, che è un’addizione il cui risultato viene comunque arrotondato perché ha più di 8 cifre significative (cifre di mantissa) e quell'errore di arrotondamento viene amplificato dal peso $w_1$ (mentre il peso $w_2$ moltiplica $\varepsilon_c = 0$ e quindi non ha effetto).\\
+Osserviamo che in una sottrazione instabile \uline{basta che uno dei due dati sia affetto da errore} per vedere la perdita di precisione.\\
+Siamo in grado a questo punto di discutere l’esempio portato alla fine della lezione 4, rispondendo alle domande: perchè $f(10^{-15})$ in Matlab ha un errore $>11\%$ e $f(2^{-50})$ è “esatto”?
+ 
+\subsection{Esempio 3}
+Si consideri il calcolo in Matlab della funzione
+\[f(x) = \frac{(1+x)-1}{x} \quad , \quad x \ne 0\]
+Chiaramente $f(x) \equiv 1$ (è la funzione costante 1), in Matlab però con le operazioni-macchina si calcola 
+\[\Tilde{f}(x) = \bigl( (1 \overbrace{\oplus}^{\text{ADD}} x) \overbrace{\oplus}^{\text{SOTTR}} (-1) \bigr) \overbrace{\oslash}^{\text{DIV}} x\]
+e si ha \[\Tilde{f}(10^{-15}) = 1,11 \dotsc\] 
+cioè l’errore relativo nel calcolo di $f$ è
+\[\varepsilon_{f(x)} = \frac{\abs{\,f(x) - \Tilde{f}(x)\,}}{\abs{\,f(x)\,}} = \abs{\,1 - 1,11 \dotsc\,} = 0,11 \dotsc > 11\%\]
+La spiegazione sta nella sottrazione che avviene tra due numeri estremamente vicini, cioè $1 + x$  e  1 (invece le altre operazioni, un’addizione e una divisione, sono stabili) mentre 1 è un reale-macchina e non viene quindi arrotondato, $x=10^{-15}$ viene arrotondato (non lo sarebbe se la base fosse 10, ma non bisogna mai dimenticare che in Matlab la base vera è 2), così come $1 + 10^{-15}$.\\
+Questi piccolissimi errori di arrotondamento (ricordiamo che sono $\le 2^{-53} \approx 10^{-16}$) vengono però amplificati dal peso $w_1$ nella sottrazione $(1 + x) - 1$, $x = 10^{-15}$.\\
+Calcoliamo
+\[w_1 = \frac{\abs{\,1+x\,}}{\abs{\,(1+x)-1\,}} = \frac{1+x}{x} \approx 10^{15}\]
+che spiega perfettamente come si siano persi 15 ordini di grandezza nel calcolo di $f$.\\
+Dall'altra parte il peso $w_1$ nel caso della sottrazione $(1+x)-1$, $x=2^{-50} \approx 10^{-15}$ è sempre dell'ordine di $10^{15}$.\\
+Per quale motivo allora $\Tilde{f}(2^{-50}) = 1$, cioè in questo caso il risultato è esatto?\\
+Perchè $2^{-50}$ e $1+2^{-50}$ sono entrambi reali-macchina in base 2 e perciò \uline{non} vengono arrotondati, cioè 
+\[\varepsilon_{1+x} = \frac{\abs{\,(1+x)-(1\oplus x)\,}}{(1+x)} = 0\]
+e il fattore di amplificazione non ha effetto.\\
+
+Come ultimo esempio di possibile instabilità della sottrazione ci occuperemo ora della formula risolutiva per le equazioni di $2^\circ$ grado, formula che siamo abituati ad usare senza farci problemi.\\
+Scopriremo invece che in certe situazioni questa formula in aritmetica floating-point può perdere moltissima precisione, fino a far perdere del tutto di significato al risultato vedremo però anche che la formula può essere convenientemente “stabilizzata” eliminando la sottrazione potenzialmente instabile.
+
+\subsection{Esempio 4}
+Consideriamo un’equazione di grado effettivo 2 \[az^2+bz+c=0 \quad , \quad a \ne 0\]
+nel caso di discriminante \[\Delta = b^2 -4ac >0\] 
+le cui soluzioni si scrivono abitualmente come \[z_{\pm} = \frac{-b \pm \sqrt{\Delta}}{2a}\]
+Ora, una di queste due soluzioni richiede una sottrazione, ovvero $z_+$ per $b>0$ e $z_-$ per $b <0 $: \uline{prendiamo per semplicità $b>0$}, essendo l’analisi dell'altro caso del tutto analoga. Osserviamo che in aritmetica floating-point $\sqrt{\Delta}$ sarà quasi sempre arrotondato, d’altra parte la funzione $\sqrt{\cdot}$ viene calcolata alla precisione di macchina in tutti i linguaggi di calcolo (vedremo nelle prossime lezioni un metodo rapido per calcolare $\sqrt{\alpha}$, $\alpha>0$ come soluzione dell'equazione $x^2-\alpha = 0$, il metodo delle tangenti detto anche metodo di Newton) quindi nella sottrazione $\sqrt{\Delta} -b$ il primo dato è sicuramente affetto da un errore al massimo dell'ordine della precisione di macchina.\\
+Quando ci si aspetta che questa sottrazione possa far perdere precisione? Quando $\sqrt{\Delta}$ è vicina a $b$ in termini relativi, cioè per 
+\[b^2 \gg \abs{\,4ac\,} \Longrightarrow \sqrt{\Delta} \approx b\]
+Infatti posto $x = \sqrt{\Delta}$, $y = -b$, i pesi sono
+\[w_1 = \frac{\abs{\,x\,}}{\abs{\,x+y\,}} = \frac{\sqrt{\Delta}}{\abs{\,\sqrt{\Delta}-b\,}} = \frac{\sqrt{\Delta}\cdot (\sqrt{\Delta}+b)}{\abs{\,\sqrt{\Delta}-b\,}\cdot (\sqrt{\Delta}+b)} = \frac{\sqrt{\Delta}\cdot (\sqrt{\Delta}+b)}{\abs{\,\Delta - b^2\,}} = \frac{\sqrt{\Delta}\cdot (\sqrt{\Delta}+b)}{\abs{\,b^2 - (b^2-4ac)\,}}\]
+Ma $\sqrt{\Delta} \approx b$ quindi
+\[w_1 = \frac{\sqrt{\Delta}\cdot (\sqrt{\Delta}+b)}{\abs{\,4ac\,}} \approx \frac{2b^2}{\abs{\,4ac\,}} = \frac{b^2}{2 \cdot\abs{\,ac\,}}\]
+e analogamente
+\[w_2 = \frac{\abs{\,-b\,}}{\abs{\,\sqrt{\Delta}-b\,}} = \frac{b\cdot (\sqrt{\Delta}+b)}{\abs{\,4ac\,}} \approx \frac{b^2}{2 \cdot\abs{\,ac\,}}\]
+
+Siccome il rapporto $\frac{b^2}{2 \cdot\abs{\,ac\,}}$ può diventare arbitrariamente grande (dipende dagli ordini di grandezza dei coefficienti $a, b, c$) la soluzione $z_+$ può subire una fortissima perdita di precisione in aritmetica floating-point, fino a renderla priva di significato in pratica.\\ 
+Facciamo a questo proposito un paio di esempi 
+
+\subsection{Esempio 4.1}
+Consideriamo l’equazione \[z^2 + 100z -1 = 0\]
+cioè $a = 1$, $b= 100$, $c =-1$ con $\Delta = 100^2+4= 10004$\\
+Nel sistema floating-point virtuale $\mathbb{F}(10, 4, L, U)$ con $L$ ed $U$ opportuni (qui il parametro chiave è $\#$cifre mantissa = 4) con $t=4$ cifre di mantissa $\Delta$ viene arrotondato a 10000
+\[fl^4(\Delta) = fl^4(0,10004)\cdot 10^5=(0,1000)\cdot 10^5\]
+quindi viene calcolato $\sqrt{\Delta} = 100$ (come sempre, usiamo il meno possibile la notazione floating-point per semplicità)\\
+Quindi in questo sistema viene calcolata $\Tilde{z}_+ = 0$ con un errore relativo del $100\%$
+\[\frac{\abs{\,z_+ - \Tilde{z}_+\,}}{\abs{\,z_+\,}} = \frac{\abs{\,z_+\,}}{\abs{\,z_+\,}} = 1\]
+In un certo senso questo è un caso limite, per la scarsità di cifre di mantissa si è costretti ad approssimare con 0 una quantità che non è nulla, facendo direttamente un errore relativo del $100\%$.\\
+Per vedere l’effetto dei coefficienti di amplificazione
+\[w_1,w_2 \approx \frac{b^2}{2\,\abs{\,ac\,}} \approx \frac{10^4}{2} = 5000\]
+Consideriamo $\mathbb{F}(10,8,L,U)$ cioè passiamo a $t=8$ cifre di mantissa con $\varepsilon_M = \frac{10^{-7}}{2}$\\ 
+In questo caso si può verificare che
+\[ \Tilde{z}_+ = \frac{-100 + \sqrt{10004}}{2} = \frac{-100 + 100,02000}{2} = 10^{-2} \]
+mentre il valore “esatto” è \[z_+= 0.0099990002\] per cui abbiamo un errore relativo
+\[\frac{\abs{\,z_+ - \Tilde{z}_+\,}}{\abs{\,z_+\,}} \approx 10^{-4}\]
+Abbiamo quindi perso 3 ordini di precisione rispetto alla precisione di macchina, il che è ben spiegato dai pesi $w_1, w_2$ che sono dell'ordine di $10^3$.\\ Osserviamo che l’errore commesso è $\approx 10^{-4}$, cioè circa dello $0.01\%$.\\ 
+D’altra parte tale errore, che potrebbe essere comunque accettabile in molti contesti applicativi, è 2000 volte più grande della precisione di macchina (poteva esserlo fino a 5000 volte, ma va tenuto presente che la precisione di macchina è una soglia massima e che gli errori relativi sono di solito più piccoli di essa).\\
+Se avessimo lavorato con $t=16$ cifre di mantissa, ci saremmo aspettati un’amplificazione degli errori di arrotondamento fino a
+\[5000 \cdot\varepsilon_M = 5000 \cdot \frac{10^{-15}}{2} \approx 10^{-12}\]
+e quindi avremmo ottenuto una precisione $< \varepsilon_M$ ma comunque molto elevata. Ma non è difficile convincersi che ci vuole poco per mettere in crisi qualsiasi sistema floating-point, basta che cambino i rapporti tra gli ordini di grandezza dei coefficienti.
+
+\subsection{Esempio 4.2 - Soluzione di equazioni di secondo grado}
+Consideriamo infatti 
+\[10^{-2}z^2 + 10^4z + 10^{-2} = 0\]
+in $\mathbb{F}(10,16,L,U)$ (sostanzialmente la precisione dell'interfaccia del Matlab).\\
+Si osservi che qui con $t=8$ cifre di mantissa saremmo stati di nuovo nella situazione di approssimare $\Delta = 10^8 - 4 \cdot 10^{-4}$ con $10^8$, perché $\Delta$ ha 12 cifre significative 
+\[\Delta = (0,\underbrace{100 \dotsc 04}_{\text{12 cifre}}) \cdot 10^9\]
+facendo quindi un errore relativo del $100\%$.\\
+Con $t=16$ cifre di mantissa si calcola
+\[\Tilde{z}_+ = \frac{-10^4 + \sqrt{10^8 - 4 \cdot 10^{-4}}}{2 \cdot 10^{-2}} = -(0,9999894 \dotsc 46) \cdot 10^{-6}\]
+mentre la soluzione “esatta” (arrotondata a 16 cifre) è \[z_+ = -(0.1000000000001000)\cdot 10^{-5}\] con errore relativo
+\[\frac{\abs{\,z_+ - \Tilde{z}_+\,}}{\abs{\,z_+\,}} \approx \frac{1.1 \cdot 10^{-5} \cdot 10^{-6}}{10^{-6}} = 1.1 \cdot 10^{-5}\]
+e una perdita di precisione di 10 ordini di grandezza rispetto a $\varepsilon_M = \frac{10^{-15}}{2}$,che è spiegabile con i fattori di amplificazione
+\[w_1,w_2 \approx \frac{b^2}{2\,\abs{\,ac\,}} = \frac{10^8}{2 \cdot 10^{-4}} = \frac{1}{2} \cdot 10^{12}\]
+questi esempi mostrano che la formula risolutiva classica delle equazioni di $2^\circ$ grado è molto instabile quando \[b^2 \gg 4\,\abs{\,ac\,}\] 
+(ovvero $\sqrt{\Delta} \approx \abs{\,b\,}$), a causa di una sottrazione intrinseca nel modo in cui è scritta.\\
+In questo caso però il problema si può risolvere riscrivendo la formula con un “trucchetto” algebrico. \\
+Considerando nuovamente il caso $b>0$ 
+\[z_+ = \frac{\sqrt{\Delta}-b}{2a} = \frac{(\sqrt{\Delta}-b)(\sqrt{\Delta}+b)}{2a(\sqrt{\Delta}+b)} = \frac{\Delta -b^2}{2a(\sqrt{\Delta}+b)} = \frac{-4ac}{2a(\sqrt{\Delta}+b)} = - \frac{2c}{\sqrt{\Delta}+b}\] 
+in $\mathbb{R}$ le 2 formule sono equivalenti; in $\mathbb{F}$ invece, la formula 
+\[z_+ = - \frac{2c}{\sqrt{\Delta}+b}\]
+diventa stabile perché è stata eliminata la sottrazione (che come sappiamo è instabile per $b^2 \gg 4\,\abs{\,ac\,}$). \\
+D'altra parte, 
+\[z_- = - \frac{(b+\sqrt{\Delta})}{2a}\]
+è \uline{stabile} perché non contiene sottrazioni.\\
+Possiamo a questo punto scrivere una formula risolvibile “STABILIZZATA” che tiene conto del segno di $b$, ovvero
+\[ \begin{cases}
+    z_1 = - sign(b)\frac{2c}{\abs{\,b\,} + \sqrt{\Delta}} \\
+    z_2 = - sign(b)\frac{\abs{\,b\,} + \sqrt{\Delta}}{2a}
+\end{cases}\]
+Tornando all'esempio 4.2 , si ha che $\Tilde{z}_+$ fa un errore relativo $\approx 10^{-5}$ su $z_+$ come abbiamo visto, mentre detto $\Tilde{z}_1$ il valore di $z_1$ calcolato in $\mathbb{F}$, si ha $\Tilde{z}_1 = fl^{16}(z_+)$ cioè il calcolo di $z_+$ è stato completamente stabilizzato.\\
+Qualcuno potrebbe osservare che anche il calcolo di $\Delta$ può contenere una sottrazione, precisamente quando $sign(a)=sign(c)$ e che questa può diventare instabile quando $b^2 \approx 4ac$ o meglio quando 
+\[\abs{\,b^2 - 4ac\,} \ll b^2,4ac\]
+Questa situazione è molto più difficile da trattare e non ce ne occuperemo.\\ Diciamo solo che qui la perdita di precisione non è completamente eliminabile, ma esiste un algoritmo grazie al quale l’errore relativo sulle due soluzioni per $\Delta>0$ con $b^2 \approx 4ac$ è dell’ordine di $\varepsilon_M^{\frac{1}{3}}$ (dove $\varepsilon_M$ è la precisione di macchina) cioè con perdita di precisione consistente ma controllata.
+\end{document}

@@ -1,0 +1,209 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm} % allows example and proof environment to be defined/used
+\usepackage{cancel}
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+\newtheorem*{esempio}{Esempio}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+
+\begin{document}
+\section{Lezione 6 - Condizionamento delle funzioni, propagazione degli errori}
+\subsection{Indice di condizionamento}
+In questa lezione ci occuperemo di due aspetti importanti del calcolo approssimato, tramite esempi: l'effetto degli errori sulla variabile $x$ e degli errori di arrotondamento nel calcolo dei valori di una funzione $f(x)$, e l'effetto degli errori di arrotondamento in un algoritmo iterativo che costruisce i valori di una successione convergente alla quantità da approssimare.\\
+Cominciamo col calcolo di funzioni, visto che in pratica tutte le quantità utilizzate nel calcolo sono approssimate, possiamo innanzitutto porci la seguente domanda: qual è l'effetto sul valore di $f$ di un errore sulla variabile indipendente $x$? Cioè, come risponde $f$ agli errori?\\
+Come sempre, siamo maggiormente interessati agli errori relativi. Consideriamo una funzione $f: I \to \mathbb{R}$ dove $I$ è un intervallo e $x, \tilde{x} \in I$ dove $\tilde{x} \approx x, x \neq 0$ con errore relativo
+\[\varepsilon_x = \frac{\abs{\,x-\tilde{x}\,}}{\abs{\,x\,}}\]
+Cerchiamo di stimare $\varepsilon_{f(x)}$\\
+\[ \varepsilon_{f(x)} = \frac{\abs{\,f(x)-f(\tilde{x})\,}}{\abs{\,f(x)\,}}, \quad f(x) \neq 0 \]
+Supponendo $f$ \uline{derivabile} in $I$ possiamo utilizzare la formula
+di Taylor al primo ordine centrata in $x$
+\[ f(\tilde{x}) \approx f(x) + f'(x)\cdot (\tilde{x}-x) \]
+da cui ricaviamo
+\[ f(\tilde{x})-f(x) \approx f'(x)\cdot (\tilde{x}-x) \iff
+        \frac{\abs{\,f(\tilde{x})-f(x)\,}}{\abs{f(x)}} \approx \frac{\abs{\,f'(x)\,}}{\abs{\,f(x)\,}} \cdot \abs{\,\tilde{x}-x\,} = \frac{\abs{\,f'(x)\,} \cdot \abs{\,x\,}}{\abs{\,f(x)\,}} \cdot \frac{\abs{\,\tilde{x}-x\,}}{\abs{\,x\,}} \]
+che possiamo riassumere con \[\varepsilon_{f(x)} \approx condf(x) \varepsilon_x \] dove
+\[ condf(x)=\frac{\abs{\,f'(x)\,} \cdot \abs{\,x\,}}{\abs{\,f(x)\,}} \]
+è l'\uline{INDICE DI CONDIZIONAMENTO} di $f$ in $x$ ed è la quantità che permette di misurare la risposta di $f$ ad errori su $x$.\\
+Se l'indice di condizionamento è grande, la funzione risulta instabile (o ``\uline{mal condizionata}"), nel senso che l'errore sulla variabile viene amplificato.\\
+Questo è il primo esempio che incontriamo di ``problema instabile" (o ``problema mal condizionato") che si può definire in modo empirico come un problema in cui ``piccoli errori sui dati possono portare ad errori grandi sulla soluzione".\newline \newline
+La stabilità del problema è un concetto che va tenuto ben distinto da quello di stabilità di un algoritmo che ne calcola la soluzione, come vedremo negli esempi seguenti.
+\subsection{Esempi}
+Cominciamo con un esempio che ben conosciamo: \newline
+\begin{esempio}
+\[ f(x)=\frac{(1+x)-1}{x}, \quad x \neq 0 \] \end{esempio}
+Chi è questa funzione? È la funzione costante 1, che ovviamente risponde in modo ottimale agli errori su $x$, visto che ovunque vale 1, quindi \[\varepsilon_{f(x)}=0 \quad \forall x,\tilde{x}\] 
+e in effetti \[f'(x)=0 \quad \forall x \Rightarrow cond f(x)=0 \quad \forall x\]
+Sappiamo però anche che in aritmetica floating-point il calcolo di $f$ è instabile se usiamo la formula scritta sopra per $\abs{\,x\,}$ piccolo.\\
+Infatti per $x\rightarrow 0$ il peso
+\[ w_1=\frac{\abs{\,1+x\,}}{\abs{\,(1+x)-1\,}}=\frac{\abs{\,1+x\,}}{\abs{\,x\,}}\rightarrow +\infty \] \newline \newline
+Nella sottrazione $(1+x)-1$, più piccolo è $\abs{\,x\,}$, più la formula è instabile a causa della perdita di precisione nella sottrazione
+(sappiamo, ad esempio, che in Matlab $f(10^{-15})=1.11 \dotsc$ con un errore relativo $>11\%$ spiegato dal fatto che $w_1\approx 10^{-15}$)\\
+Ma ATTENZIONE: è la formula, cioè l'espressione di calcolo, cioè l'\uline{algoritmo}, ad essere \uline{instabile} invece la \uline{funzione} è perfettamente \uline{stabile} e potremmo calcolarla con un algoritmo stabile, ovvero semplicemente $f(x)=1$\\
+Chiaramente si tratta di un caso limite, adesso vedremo altri esempi meno estremi
+\begin{itemize} %1
+    \item $f(x)=\frac{1}{x},\quad x\neq 0$
+\end{itemize}
+\[cond f(x)= \frac{\abs*{\,-\frac{1}{x^2}\,} \cdot \abs{\,x\,}}{\abs*{\,\frac{1}{x}\,}} = 1 \]
+questa è una funzione stabile $\forall x$, in effetti lo sappiamo già, è l'operazione di reciproco \newline
+
+\begin{itemize} %2
+    \item $f(x)=1-x$
+\end{itemize}
+\[ cond f(x)= \frac{\abs{\,(-1)\,}\abs{\,x\,}}{\abs{\,1-x\,}} = \frac{\abs{\,x\,}}{\abs{\,1-x\,}} \] 
+ora $cond f(x)\rightarrow +\infty, \quad x\rightarrow 1$ quindi la funzione è instabile per $x\approx$ 1.\\
+Di nuovo non è una sorpresa, si tratta di una sottrazione instabile per $x\approx1$, qui $condf(x)=w_2$ \newline
+
+\begin{itemize} %3
+    \item $f(x) = 1-\sqrt{1-x^2}, \quad 0 < \abs{\,x\,} \le 1$\\
+\end{itemize}
+\[ f'(x) = -\,\frac{1}{2\sqrt{1-x^2}} \cdot (-2x) = \frac{x}{\sqrt{1-x^2}} \]
+\begin{center}
+    (derivata di una funzione composta)
+\end{center}
+e quindi
+\[ \begin{split}
+        condf(x) & = \frac{\abs{\,x\,}}{\sqrt{1-x^2}} \cdot \frac{\abs{\,x\,}}{\abs{\,f(x)\,}} \\
+        & = \frac{x^2}{\sqrt{1-x^2}} \cdot \frac{1}{1-\sqrt{1-x^2}} \\
+        & = \frac{x^2}{\sqrt{1-x^2}}\cdot \frac{1 + \sqrt{1-x^2}}{(1 + \sqrt{1-x^2})(1 - \sqrt{1-x^2})}\\
+        & = \frac{x^2(1+\sqrt{1-x^2})}{\sqrt{1-x^2}(1-(1-x^2))} \\
+        & = \frac{1+\sqrt{1-x^2}}{\sqrt{1-x^2}} \\
+    \end{split} \]
+Abbiamo che
+\[ condf(x)\rightarrow2, \quad x\rightarrow0 \]
+Quindi $f$ è ben condizionata per $x\approx0$.\\ 
+D'altra parte il calcolo con l'espressione
+\[ f(x)=1-\sqrt{1-x^2} \]
+è instabile per $x\approx 0$ a causa della sottrazione esterna 
+\[1 \underset{\underset{\text{\tiny{INSTAB.}}}{\uparrow}}{-} \sqrt{1 \underset{\underset{\text{\tiny{STAB.}}}{\uparrow}}{-} x^2} \quad \text{per } x \approx 0\]
+mentre la sottrazione sotto radice è stabile.\\
+Il motivo è che nella sottrazione interna i due numeri si allontanano in termini relativi per $x \to 0$, mentre in quella esterna si avvicinano, infatti
+\[ w_2 = \frac{\sqrt{1-x^2}}{1-\sqrt{1-x^2}} = \frac{\sqrt{1-x^2}\cdot (1+\sqrt{1-x^2})}{x^2} \to +\infty \]
+per $x\to 0$.\\
+Cosa stiamo vedendo? La funzione è stabile per $x\approx 0$, ma l'algoritmo scelto per calcolarla non lo è (a causa della sottrazione esterna). Dai conti fatti con le equazioni di $2^\circ$ grado, sappiamo però che possiamo stabilizzare la formula per il calcolo di $f$
+\[ \begin{split}
+    f(x) & = 1-\sqrt{1-x^2} \\
+    & = \frac{(1-\sqrt{1-x^2}) \cdot (1+\sqrt{1-x^2})}{1+\sqrt{1-x^2}} \\
+    & =\frac{1-(1-x^2)}{1+\sqrt{1-x^2}} \\
+    & =\frac{x^2}{1+\sqrt{1-x^2}} 
+\end{split} \]
+Con questa seconda formula il calcolo in aritmetica di macchina diventa stabile per $x \approx 0$, perché tutte le operazioni coinvolte (potenza, divisione, addizione e sottrazione sotto radice) sono stabili.\\
+La risposta di una funzione ad errori sulla variabile è una proprietà intrinseca della funzione, potremmo dire una proprietà ``strutturale", che non dipende da ``come" è scritta ma solo dall'indice di condizionamento $cond f(x)$.\\ 
+D'altra parte ``come" è scritta significa qual è l'$\uline{algoritmo}$ di calcolo.\\
+Abbiamo visto che per una funzione ben condizionata possono esserci algoritmi stabili e algoritmi instabili, sta a noi sceglierne uno stabile.\\ 
+Usando di nuovo una definizione non rigorosa ma empirica possiamo dire che un algoritmo è instabile quando \textit{``piccoli errori introdotti durante il processo di calcolo (ad esempio gli arrotondamenti in aritmetica floating-point) possono portare ad errori grandi sui risultati del calcolo"}.\\
+\newline
+Siccome nel calcolo di $f(x)$ un errore su $x$ (misura sperimentale, arrotondamento, $\dotsc$) cioè sul dato del problema, è uno degli errori introdotti nel processo di calcolo, ci si aspetta che se esiste un algoritmo stabile la funzione sia ben condizionata, cioè che $condf(x)$ non sia grande.\\ 
+È proprio quello che accade nell'esempio precedente, dove la scrittura 
+\[f(x) = \frac{x^2}{1+\sqrt{1-x^2}}\] è stabile per $x\approx 0$, infatti $condf(x)\approx 2$ (cioè non è grande) per $x\approx 0$.\\
+Viceversa, se una funzione è instabile (mal condizionata) ci aspettiamo che qualsiasi algoritmo di calcolo ``erediti" questa instabilità.\\
+È bene ribadire che tutti questi concetti (non facili) li stiamo esprimendo in modo empirico ed essenzialmente qualitativo, per non entrare nell'ambito di teorie generali della stabilità che richiedono strumenti matematici di livello superiore a quelli che usiamo in questo corso.\\
+\newline
+Per concludere con l'esempio, osserviamo che $f(x) = 1-\sqrt{1-x^2}$ è ben condizionata per $x \approx 0$, ma è mal condizionata per $\abs{\,x\,} \approx 1$ visto che \[condf(x) = \frac{1+\sqrt{1-x^2}}{\sqrt{1-x^2}} \to +\infty \] 
+per $\abs{\,x\,} \to 1$.\newline \newline
+Nella seconda parte della lezione facciamo un passo ulteriore verso una metodologia caratteristica del calcolo numerico, ovvero il calcolo di una successione che \uline{converge} alla quantità che vogliamo approssimare, tramite un \uline{algoritmo iterativo}.\\
+Il problema che affrontiamo è il calcolo di $\pi$ in un sistema floating-point a 64 bit (ad esempio in Matlab) con un errore dell'ordine della precisione di 
+macchina (cioè con almeno 15 cifre corrette nell'interfaccia in base 10).
+
+\subsection{Calcolo di $\pi$}
+\subsubsection{Serie armonica}
+Consideriamo 2 successioni convergenti a $\pi$:\\
+la prima si può ottenere dal fatto che la cosiddetta serie armonica (con esponente 2) converge e ha come somma
+\[ \sum_{k=1}^\infty \frac{1}{k^2} = \frac{\pi^2}{6} \]
+(risultato che accettiamo senza dimostrarlo).\\
+Allora, detta \[S_n = \sum_{k=1}^n \frac{1}{k^2}\] la somma parziale n-esima, visto che 
+\[ \sum_{k=1}^\infty \frac{1}{k^2} = \lim_{n \to \infty} S_n = \frac{\pi^2}{6} \] si ottiene subito \[\lim_{n \to \infty} \sqrt{6\cdot S_n} = \pi \]
+Osserviamo che il calcolo di $S_n$ in aritmetica di macchina è stabile, perché coinvolge solo operazioni stabili (elevamento al quadrato, reciproco, addizioni essendo la serie a termini positivi) però la successione $\sqrt{6\cdot S_n}$ è
+in pratica inutilizzabile per calcolare $\pi$ con grande precisione, perché la successione $S_n$ converge troppo lentamente.\\
+Infatti si vede con il criterio di confronto integrale che il resto 
+\[ \frac{\pi^2}{6} - S_n = \sum\limits_{k=n+1}^\infty \frac{1}{k^2} \] 
+si può maggiorare nel modo seguente
+\[ \sum_{k=n+1}^\infty \frac{1}{k^2} < \int_n^\infty \frac{1}{x^2} dx = \frac{1}{n} \]
+come è chiaro dal disegno schematico (non in scala)\\
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{img13}
+\end{center}
+dove si vede che l'area che sta sotto la curva $y= \frac{1}{x^2}$ tra $n$ e $\infty$ (cioè $\int_n^\infty \frac{1}{x^2}dx$) è maggiore della somma delle aree dei rettangolini che hanno base 1 e altezza $\frac{1}{k^2}$ con $k = n+1, n+2, \dotsc$ cioè $\sum_{k=n+1}^\infty \frac{1}{k^2}$. \\
+Quindi l'errore che si commette approssimando $\frac{\pi^2}{6}$ con $S_n$ si può stimare con \[ \frac{\pi^2}{6}-S_n < \frac{1}{n} \]
+Questo significa che per approssimare $\frac{\pi^2}{6}$ con un errore $\le \varepsilon_M$ (precisione di macchina) basta che 
+\[\frac{\pi^2}{6}-S_n < \frac{1}{n} \le \varepsilon_M \]
+cioè $n \ge \varepsilon_M^{-1} \approx 10^{16}$, quindi bisognerebbe sommare $10^{16}$ (10 milioni di miliardi) di termini della serie!\\
+D'altra parte in aritmetica di macchina ad un certo punto la somma $S_n$ diventerebbe costante, perché i termini che vanno sommati diventerebbero troppo piccoli e si comporterebbero come elementi neutri, impedendo di raggiungere la precisione richiesta (accade da $n\approx10^8$ in poi).
+
+\subsubsection{Successione di Archimede}
+Considerando invece la successione definita ``per ricorrenza" da\\\\
+$x_0=2$\\
+$x_{n+1}=2^{n-\frac{1}{2}}\cdot\sqrt{1-\sqrt{1-(4^{1-n})x_{n}^2}}, \quad n=2,3,4,\dotsc$\\
+detta ``successione di Archimede" si può dimostrare con metodi geometrici (legati all'approssimazione del cerchio con poligoni regolari) che 
+\[ \lim_{n\to\infty} x_n= \pi \]
+Se calcoliamo $x_n$ in Matlab con un semplice ciclo ``for" e plottiamo l'errore relativo \[ r_n=\frac{\abs{\,\tilde{x}_n-\pi\,}}{\pi} \] in SCALA LOGARITMICA , cioè plottiamo $log_{10}(r_n)$, otteniamo un grafico tipo quello disegnato di seguito in nero
+\begin{center}
+    \includegraphics[width=0.5\textwidth]{img14}
+\end{center}
+(dove abbiamo interpolato i valori discreti per una migliore visualizzazione).\\
+Si vede che l'errore decresce linearmente fino a circa $10^{-10}$ e poi comincia a crescere, cioè la successione $\tilde{x}_n$ calcolata con lo schema descritto sopra in aritmetica di macchina da un certo $n$ in poi comincia ad allontanarsi da $\pi$.\\
+Si noti che fino a quel punto l'errore decade rapidamente, infatti un decadimento lineare in scala logaritmica significa che 
+\[ log_{10}(r_n)=-\alpha\,n+\beta \quad \text{ con } \alpha >0 \] 
+cioè in scala normale 
+\[r_n=10^{-\alpha n+\beta}=\gamma\,\theta^n \quad \text{ con } \quad \gamma=10^{\beta} \quad \text{ e } \quad \theta=10^{-\alpha}< 1 \] 
+che è un decadimento esponenziale (tanto più veloce quanto più grande è $\alpha$).\\
+È chiaro che l'algoritmo è instabile e che tale instabilità è in grado da un certo $n$ in poi di distruggere la convergenza della successione (si osservi però che comunque la convergenza finchè c'è è rapida e permette di arrivare ad approssimare $\pi$ con un errore $\approx10^{-10}$ in meno di 20 iterazioni).\\ 
+A cosa è dovuta l'instabilità? All'interno della radice quadrata esterna ci sono 2 sottrazioni, 
+\[ 1-\sqrt{1-\alpha_n} \quad \text{ con } \alpha_n=(4^{1-n})x^{2}_n \]
+Visto che $\alpha_n$ è un infinitesimo, $\alpha_n \to 0,\, n\to\infty$ (perchè $4^{-n}\to 0$ e $x^{2}_n\to\pi^2,\, n\to\infty$) la sottrazione $1-\alpha_n$ è stabile (i numeri si allontanano in termini relativi al crescere di $n$).\\ 
+Ma per lo stesso motivo la sottrazione 
+\[ 1-\sqrt{1-\alpha_n} \] 
+diventa sempre più instabile al crescere di $n$, perchè $\sqrt{1-\alpha_n}\to1$, $n\rightarrow\infty$ e la convergenza a 1 è rapida ($\abs{\,1-\sqrt{1-\alpha_n}\,}$ va a zero come $4^{-n}$).\\
+Possiamo calcolare il peso $w_2$ di questa sottrazione, visto che $\sqrt{1-\alpha_n}$ è sicuramente affetto da errore (dell'ordine della precisione di macchina, visto che $\sqrt{\,\cdot\,}$ è una funzione predefinita calcolata alla precisione di macchina).\\ 
+Posto $x=1,\, y=-\sqrt{1-\alpha_n}$ si ha\\
+\[\begin{split}
+    w_2 & = \frac{\abs{\,y\,}}{\abs{\,x+y\,}} \\
+    & = \frac{\sqrt{1-\alpha_n}}{1-\sqrt{1-\alpha_n}} \\
+    & = \frac{\sqrt{1-\alpha_n}(1+\sqrt{1-\alpha_n})}{(1-\sqrt{1-\alpha_n})(1+\sqrt{1-\alpha_n})} \\
+    & =\frac{\sqrt{1-\alpha_n}(1+\sqrt{1-\alpha_n})}{1-(1-\alpha_n)} \\
+    & \approx\frac{2}{\alpha_n}=2\cdot\frac{4^{n-1}}{x^{2}_n}\approx\frac{1}{2\pi^2}4^n
+\end{split}\]
+Quindi il peso $ w_2 $ è fattore di amplificazione che cresce esponenzialmente come $ 4^n $.\\
+Possiamo stimare l'errore $ e_n=\abs{\,\pi - \Tilde{x}_n\,} $ in questo modo:
+\[\begin{split}
+    e_n & = \abs{\,\pi - x_n + x_n - \Tilde{x}_n\,} \\
+    & \le \underbrace{\abs{\,\pi - x_{n}\,}}_{\text{\tiny{CONVERGENZA}}} + \underbrace{\abs{\,x_n - \Tilde{x}_n\,}}_{\text{\tiny{STABILITÀ}}}
+\end{split}\]
+dove l'errore $\abs{\,\pi - x_{n}\,}$ è legato alla \uline{convergenza teorica} del metodo (in generale, dire che
+\[\lim_{x\to \infty} x_{n} = l\]
+con $l$ limite finito è equivalente a dire che l'errore $\abs{\,x_n - l\,}\to 0,\, n \to \infty $), mentre l'errore $\abs{\,x_n - \Tilde{x}_n\,}$ è legato alla \uline{stabilità dell'algoritmo} che implementa il metodo. \\
+Dall'analisi fatta, 
+\[\abs{\,x_n - \pi\,} = c\,\theta^{n} \quad \text{ con } 0<\theta<1\] mentre 
+\[\abs{\Tilde{x}_n - x_n} \lesssim c' \cdot 4^n\,\varepsilon_{M}\] 
+con $c$ e $c'$ costanti. Quindi 
+\[ e_n \lesssim c\,\theta^n + c' \, 4^n\,\varepsilon_{M} \]
+da cui ci aspettiamo che finché 
+\[c'\,4^{n}\,\varepsilon_{M}<c\,\theta^{n}\] 
+si continui a vedere la convergenza, ma da quel punto in poi il termine esponenziale crescente comincia a sovrastare e in pratica fa allontanare la successione calcolata dal limite. \\
+Si osservi che ad un certo punto l'errore diventa costante: questo accade quando $\alpha_n$ è così piccolo che $1 \ominus \alpha_n = 1$ e quindi $\tilde{x}_n=0$ forzando un errore del $100\%$.\\
+È però possibile stabilizzare il calcolo di $x_n$ eliminando la sottrazione instabile, con lo stesso trucco utilizzato per le equazioni di $2^\circ$ grado. \\
+Il cuore del problema è infatti il calcolo di  $1-\sqrt{1-\alpha_{n}}$ :
+\[\begin{split}
+    1-\sqrt{1-\alpha_{n}} & = \frac{(1-\sqrt{1-\alpha_n})(1+\sqrt{1-\alpha_n})}{1+\sqrt{1-\alpha_n}} \\
+    & = \frac{1-(1-\alpha_n)}{1+\sqrt{1-\alpha_n}} \\ 
+    & = \frac{\alpha_n}{1+\sqrt{1-\alpha_n}}
+\end{split}\]
+questa riscrittura è stabile in aritmetica floating-point, perchè sono coinvolte solo operazioni stabili.\\
+Possiamo allora riscrivere l'iterazione in forma stabile 
+\[\begin{split}
+    x_{n+1} & = 2^{n-\frac{1}{2}}\sqrt{1-\sqrt{1-\alpha_n}} \quad \Longleftarrow \quad \text{INSTABILE} \\
+    & = 2^{n-\frac{1}{2}}\sqrt{\frac{\alpha_n}{1+\sqrt{1-\alpha_n}}} \\
+    & = \frac{\sqrt{2}\,x_n}{\sqrt{1+\sqrt{1-(4^{1-n})x_{n}^{2}}}} \quad \Longleftarrow \quad \text{STABILE}
+\end{split}\]
+Nell'aritmetica dei reali le due formule sono coincidenti, mentre in aritmetica floating-point la seconda è stabile mentre la prima è fortemente instabile.\\
+Nel grafico degli errori in scala logaritmica disegnato sopra, la successione stabilizzata
+\[ y_2=2, \quad y_{n+1}=\frac{\sqrt{2}\,y_n}{\sqrt{1+\sqrt{1-4^{1-n}\,y_n^2}}}, \quad n\ge 2 \]
+calcolata in aritmetica di macchina, diciamola $\tilde{y}_n$, fa un errore sostanzialmente coincidente con quello di $\tilde{x}_n$ finché per quest'ultima si innesca l'instabilità, per poi continuare a diminuire secondo la stessa retta (cioè esponenzialmente in scala normale) fino ad attestarsi all'ordine della precisione di macchina, sotto la quale ovviamente non si può andare in aritmetica di macchina, perché cominciano a dominare gli errori di arrotondamento, come si vede dalla stima
+\[\abs{\,\pi - \tilde{y}_n\,} \le \abs{\,\pi - y_n\,} + \abs{\,y_n - \tilde{y}_n\,} \lesssim c\,\theta^{n}+c''\,\varepsilon_M \quad \text{ con } c''\approx \pi \]
+per $n$ abbastanza grande $c\,\theta^n\le c''\,\varepsilon_M$ e quindi ci aspettiamo che il termine $c''\varepsilon_{M}$ diventi dominante nell'errore.
+
+\end{document}

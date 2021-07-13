@@ -1,0 +1,288 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm} 
+\usepackage{graphicx}
+\usepackage{mathtools}
+\usepackage[normalem]{ulem}
+
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\newcommand{\inter}{\begin{matrix}\prod\end{matrix}}
+\DeclarePairedDelimiter{\norma}{\lVert}{\rVert}
+ 
+\begin{document}
+\section[Lezione 24 - Sistemi lineari sovradeterminati, fattorizzazione QR]{Lezione 24 - Sistemi lineari sovradeterminati, minimi quadrati, sistema delle equazioni normali, fattorizzazione QR}
+
+In questa lezione ci occuperemo della soluzione numerica di sistemi lineari SOVRADETERMINATI, cioè sistemi
+\begin{equation*}
+    Ax=b, \ A\in \mathbb{R}^{m\times n}, \ b\in \mathbb{R}^m, x\in \mathbb{R}^n
+\end{equation*}
+con \fbox{$m>n$} (ci sono più equazioni che incognite), in forma estesa
+\begin{equation*}
+    \begin{pmatrix}
+        a_{11} & \dots & a_{1n} \\
+        a_{21} & \dots & a_{2n} \\
+        \vdots &  & \vdots \\
+        \vdots &  & \vdots \\
+        a_{m1} & \dots & a_{mn} 
+    \end{pmatrix}
+    \begin{pmatrix}
+        x_1 \\
+        \vdots \\
+        x_n
+    \end{pmatrix}=
+    \begin{pmatrix}
+        b_1 \\
+        b_2 \\
+        \vdots \\
+        \vdots \\
+        b_n
+    \end{pmatrix}
+\end{equation*}
+In generale un sistema sovradeterminato non ha soluzione in senso classico, cioè non è detto che esista $x \in \mathbb{R}^n$ tale che $Ax=b$. \\
+Infatti, ricordando la solita proprietà, cioè che un prodotto matrice-vettore si può interpretare come combinazione lineare delle colonne della matrice con coefficiente gli elementi del vettore
+\begin{equation*}
+    Ax=x_1 C_1(A) + \dots + x_n C_n(A)
+\end{equation*}
+un sistema (sovradeterminato) ha soluzione se e solo se
+\begin{equation*}
+    b \in \langle C_1(A), \dots, C_n(A) \rangle \subset \mathbb{R}^m
+\end{equation*}
+cioè se e solo se $b$ sta nel sottospazio di $\mathbb{R}^m$ generato dalle colonne di $A$ (si tratta di un sottospazio effettivo perché la dimensione $\leq n < m$). \\
+Visto che una soluzione $x \in \mathbb{R}^n$ tale che $Ax=b$ non esiste in generale, cioè non esiste $x \in \mathbb{R}^n$ tale che $dist_2(b,Ax)=\norma{b-Ax}_2 = 0$, possiamo cercare $x$ in modo da minimizzare tale distanza, ovvero risolvere il problema di minimo in $\mathbb{R}^n \ \underset{x\in \mathbb{R}^n}{min} \norma{b-Ax}_2 $ oppure visto che è equivalente
+\begin{equation*}
+    \underset{x\in \mathbb{R}^n}{min} \ \phi(x), \ \phi(x)=\norma{b-Ax}_2^2
+\end{equation*}
+dove
+\begin{equation*}
+    \begin{split}
+        \phi(x) & = \sum_{i=1}^m \left(b-Ax\right)_i^2 = \sum_{i=1}^m \left(b_i - (Ax)_i\right)^2 \\
+        & = \sum_{i=1}^m \left(b_i - \left( \sum_{j=1}^n a_{ij}x_j \right) \right)^2
+    \end{split}
+\end{equation*}
+Si vede facilmente che $\phi(x)$ è un polinomio di grado 2 nelle $n$ variabili $x_1, x_2, \dots, x_n$. \\
+In effetti abbiamo già incontrato una situazione di questo tipo con l'approssimazione polinomiale ai minimi quadrati nella lezione 15, dove si cercava un polinomio di grado $k$ (cambiando leggermente la notazione per non fare confusione coi simboli attuali) che rendesse minima la somma degli scarti quadratici rispetto ai valori $y_1,\dots,y_N$ di una funzione campionata su $N$ ascisse $t_1,\dots,t_N$, ovvero si cercavano dei coefficienti $c_1,\dots,c_{k+1}$ che realizzassero
+\begin{equation*}
+    \begin{split}
+        \underset{c\in \mathbb{R}^{k+1}}{min} \ \phi(c), \ \phi(c) & = \sum_ {i=1}^N \left( y_i - (Vc)_i \right)^2 \\
+        & = \norma{y-Vc}_2^2
+    \end{split}
+\end{equation*}
+dove $V=(t_i^j) \in \mathbb{R}^{N\times (k+1)}$, è una matrice di Vandermonde rettangolare ($N>k+1$ e tipicamente $N\gg k+1$). \\
+In effetti, visto che l'uguaglianza $Vc=y$ cioè $\norma{y-Vc}_2=0$ non può essere ottenuta in generale perché il sistema è sottodeterminato, si va a minimizzare $\norma{y-Vc}_2^2$. È lo stesso tipo di problema che stiamo affrontando adesso in forma generale, la soluzione ai MINIMI QUADRATI di un sistema sovradeterminato (nel caso polinomiale rientriamo nella formulazione generale con $A=V$, $b=y$, $x=c$, $m=N$ e $n=k+1$).\\
+Ovvero, il problema polinomiale dei minimi quadrati si può rivedere come particolare istanza della soluzione ai minimi quadrati di un sistema sovradeterminato. Non è quindi sorprendente che valga il seguente
+\subsection{TEOREMA (sistema delle equazioni ``normali" per la soluzione ai minimi quadrati di un sistema lineare sovradeterminato)} 
+\begin{center}
+    \fbox{\begin{minipage}[t]{15cm}%
+        Il vettore $x\in\mathbb{R}^n$
+        minimizza $\phi(x) = \norma{b-Ax}_2^2$\\
+        \centering $\Updownarrow$\\
+        risolvere il sistema lineare $n\times n$ $A^tAx=A^tb$ (sistema delle equazioni normali)
+    \end{minipage}}
+\end{center}
+\begin{proof}[\unskip\nopunct]
+\uline{Dimostrazione:}\\
+Siccome la dimostrazione è del tutto analoga a quella già fatta nel caso dei minimi quadrati polinomiali, la svilupperemo senza ridiscutere i dettagli. 
+
+Per prima cosa $\phi(x)$ è un minimo se e solo se $\phi(x+z)\geq \phi(x) \ \forall z \in \mathbb{R}^n$. \\
+Ora
+\begin{equation*}
+    \begin{split}
+        \phi(x+z) & = \norma{b-A(x+z)}_2^2 \\
+        & = (b-A(x+z), b-A(x+z)) \quad \longleftarrow \text{prod. scalare in } \mathbb{R}^m\\
+        & = (b-Ax-Az, b-Ax-Az) \\
+        & = (b-Ax, b-Ax)-2(Az,b-Ax) + (Az, Az) \\
+        & = \phi(x) + 2(z,A^t(Ax-b))+\norma{Az}_2^2
+    \end{split}
+\end{equation*}
+\begin{itemize}
+\item``$\Uparrow$" Se $A^tAx=A^tb$ allora 
+\begin{equation*}
+    \phi(x+z) = \phi(x) + \overbrace{\norma{Az}_2^2}^{\geq 0} \geq \phi(x) \ \forall z
+\end{equation*}
+cioè $\phi(x)$ è minimo
+
+\item ``$\Downarrow$" Se $\phi(x)$ è un minimo allora $\forall \varepsilon >0$ e $\forall v \in \mathbb{R}^n$, $\norma{v}_2=1$
+\begin{equation*}
+    \phi(x+\varepsilon v)=\phi(x) + 2(\varepsilon v, A^t(Ax-b)) + \norma{\varepsilon v}_2^2 \geq \phi(x)
+\end{equation*}
+cioè
+\begin{equation*}
+    2\varepsilon(v,A^t(Ax-b))+\varepsilon^2 \geq 0
+\end{equation*}
+e dividendo per $\varepsilon$
+\begin{equation*}
+    2(v,A^t(Ax-b))+\varepsilon \geq 0 \ \forall \varepsilon,v
+\end{equation*}
+da cui per $\varepsilon \to 0$
+\begin{equation*}
+    (v, A^t(Ax-b)) \geq 0 \ \forall v
+\end{equation*}
+Ma allora prendendo $-v$
+\begin{equation*}
+    (-v, A^t(Ax-b)) \geq 0 \ \forall v
+\end{equation*}
+cioè
+\begin{equation*}
+    (v, A^t(Ax-b)) \leq 0 \ \forall v
+\end{equation*}
+e quindi
+\begin{equation*}
+    (v, A^t(Ax-b)) = 0 \ \forall v
+\end{equation*}
+da cui $A^t(Ax-b)=0$ perché l'unico vettore ortogonale a tutti i versori è il vettore nullo, cioè $A^tAx=A^tb$
+\end{itemize}
+\end{proof}
+\vspace{0.2cm}
+Cosa possiamo dire della matrice $A^tA$ del sistema delle equazioni normali?
+È quadrata, $A^tA \in \mathbb{R}^{n\times n}$, simmetrica $((A^tA)^t = A^t(A^t)^t = A^tA)$ e semidefinita positiva. \\
+Infatti $\forall z \in \mathbb{R}^n$
+\begin{equation*}
+    (A^tAz,z) = (Az,Az)=\norma{Az}_2^2 \geq 0
+\end{equation*}
+Inoltre $(z,A^tAz)=\norma{Az}_2^2=0$ se e solo se $Az=0$ (cioè se e solo se $z$ è nel nucleo di $A$). \\
+Se le colonne di $A$ (ricordiamoci che $A$ è rettangolare $m\times n$ con $m>n$) sono linearmente indipendente, cioè se $rango(A)=n$, allora $Az=0 \Leftrightarrow z = 0$, di conseguenza $A^tA$ è definita positiva e quindi non singolare. \\
+In altre parole se $A$ ha \uline{rango $max$} $=n$ la soluzione ai minimi quadrati del sistema sovradeterminato è \uline{unica}. \\
+Nel caso particolare dei minimi quadrati polinomiali di grado $k$ abbiamo visto, ad es., che $A=V$ ha rango massimo se esistono almeno $n=k+1$ nodi di campionamento distinti tra gli $m=N$ nodi (e quindi di sicuro se gli $N$ nodi sono tutti distinti come è naturale).
+
+\subsection{Soluzione del sistema delle equazioni normali}
+Abbiamo appena dimostrato che se $rango(A)=n$ la soluzione di $Ax=b$ ai minimi quadrati è l'unica soluzione del sistema non singolare $A^tAx=A^tb$. \\
+Quindi si potrebbe pensare di risolvere il sistema sovradeterminato applicando ad es. il $meg$ al sistema delle equazioni normali. \\
+Per fare questo però bisogna calcolare ed utilizzare la matrice $A^tA$, che non è la strada migliore perché $A^tA$ tende ad essere mal condizionata e nelle applicazioni è naturale che ad es. il vettore $b$ (e quindi anche $A^tb$) sia affetto da errori. \\
+Perché $A^tA$ tende ad essere mal condizionata? Osserviamo che 
+\begin{equation*}
+    k_2(A^tA)=\norma{A^tA}_2\norma{(A^tA)^{-1}}_2 = \frac{max\lambda_i(A^tA)}{min \lambda_i(A^tA)}
+\end{equation*}
+essendo $A^tA$ simmetrica e definita positiva ed è questo rapporto di autovalori che tende ad essere grande, perché
+\begin{equation*}
+    k_2(A^tA)=(k_2(A))^2 \gg k_2(A) > 1
+\end{equation*}
+Qui però stiamo usando il concetto di condizionamento di una matrice rettangolare, che non abbiamo discusso in questo corso perché ha bisogno di una generalizzazione del concetto di autovalore (a quelli che sono detti i ``valori singolari" di una matrice, che coincidono con i moduli degli autovalori nel caso quadrato). \\
+Per ``intuire" cosa succede però consideriamo il caso di $A$ quadrata e simmetrica: allora $A^tA=A^2$ e $\lambda_i(A^tA)=\lambda_i(A^2)=(\lambda_i(A))^2$ sono gli autovalori di $A^tA$, quindi essendo $A^2$ simmetrica
+\begin{equation*}
+    \begin{split}
+         k_2(A^tA) & = k_2(A^2)=\frac{max \lambda_i(A^2)}{min \lambda_i(A^2)} \\
+         & = \left(\frac{max |\lambda_i(A)|}{min |\lambda_i(A)|} \right)^2 = (k_2(A))^2 \gg k_2(A)
+    \end{split}
+\end{equation*}
+perché come sappiamo $k(A) \geq 1$ in qualsiasi norma matriciale indotta e $k_2(A) > 1$ se $A$ (simmetrica) ha almeno 2 autovalori distinti. \\
+Esiste però una strada alternativa per la soluzione di $A^tAx=A^tb$, che evita di usare direttamente la matrice mal condizionata $A^tA$ ed è basata su una delle più importanti fattorizzazioni di una matrice, la fattorizzazione QR che permette di scrivere una qualsiasi matrice $A\in \mathbb{R}^{m \times n}$ con $m\geq n$ e $rango(n)$ come prodotto di una matrice ORTOGONALE per una matrice TRIANGOLARE SUPERIORE (non singolare)
+\subsection{TEOREMA (fattorizzazione QR di una matrice rettangolare)}
+\begin{center}
+    \fbox{\begin{minipage}[t]{15cm}%
+        Sia $A\in\mathbb{R}^{m\times n}$, $m \ge n$ tale che $rango(A)=n$\\
+        Allora $\exists Q \in \mathbb{R}^{m\times n}$ ortogonale (cioè $Q^tQ=I$) e $\exists R \in \mathbb{R}^{n\times n}$ tringolare superiore con $det(R)\neq 0$ tali che
+        \begin{equation*}
+            A= \begin{pmatrix}
+                a_{11} & \dots & a_{1n} \\
+                a_{21} & \dots & a_{2n} \\
+                \vdots & & \\
+                \vdots & & \\
+                a_{m1} & \dots & a_{mn}
+            \end{pmatrix}= QR= 
+            \begin{pmatrix}
+                q_{11} & \dots & q_{1n} \\
+                q_{21} & \dots & q_{2n} \\
+                \vdots & & \\
+                \vdots & & \\
+                q_{m1} & \dots & q_{mn}
+            \end{pmatrix}
+            \begin{pmatrix}
+                r_{11} & \dots & r_{1n} \\
+                 & \ddots & \vdots \\
+                0 &  & r_{nn}
+            \end{pmatrix}
+        \end{equation*}
+    \end{minipage}}
+\end{center}
+Cerchiamo ora di capire il significato di questo risultato e di intuire la dimostrazione (che non faremo rigorosamente). \\
+Innanzitutto, cosa significa che $Q$ è ortogonale, cioè che $Q^tQ=I$?\\
+Osserviamo che $Q^t\in \mathbb{R}^{n\times m}$ ha per righe le colonne di $Q$, quindi $Q^tQ=I\in \mathbb{R}^{n\times n}$ cioè
+\begin{equation*}
+    \underset{\text{prodotto rige $i$-col $j$}}{\mathcal{R}_i(Q^t)\mathcal{C}_j(Q)}=\underset{\text{prodotto scalare}}{(\mathcal{C}_i(Q),\mathcal{C}_j(Q))}=\underset{\text{delta di Kronecker}}{\delta_{ij}}
+\end{equation*}
+ovvero le colonne di $Q$ sono vettori ORTONORMALI di $\mathbb{R}^m$. \\
+Siccome $R$ è invertibile 
+\begin{equation*}
+    QRR^{-1} = Q = AR^{-1}
+\end{equation*}
+Ora, si può dimostrare l'inversa di una matrice triangolare è triangolare dello stesso tipo (accettiamo questo risultato). \\
+Quindi
+\begin{equation*}
+    R^{-1}=\begin{pmatrix}
+         \varrho_{11} & \varrho_{12} & \dots & \varrho_{1n} \\
+          & \varrho_{22} & \dots & \varrho_{2n} \\
+          & & \ddots & \vdots \\
+          & & & \varrho_{nn} 
+    \end{pmatrix}
+\end{equation*}
+con $\varrho_{ii}\neq 0 \ \forall i$.\\
+Consideriamo le colonne di $Q=AR^{-1}$. \\
+Per la solita interpretazione del prodotto matrice-vettore, in questo caso il prodotto di $A$ per le colonne di $R^{-1}$,
+\begin{align*}
+    \mathcal{C}_1(AR^{-1}) & = \mathcal{C}_1(Q)=\varrho_{11}\mathcal{C}_1(A) \\
+    \mathcal{C}_2(AR^{-1}) & =\mathcal{C}_2(Q)\\
+        &=\varrho_{12}\mathcal{C}_1(A) + \varrho_{22}\mathcal{C}_2(A) \\
+    \mathcal{C}_3(AR^{-1})& =\mathcal{C}_3(Q)\\
+        &=\varrho_{13}\mathcal{C}_1(A) + \varrho_{23}\mathcal{C}_2(A) + \varrho_{33}\mathcal{C}_3(A) \\
+        &\vdots \\
+    \mathcal{C}_j(AR^{-1}) & = \mathcal{C}_j(Q) \\
+        &=\sum_{i=1}^j\varrho_{ij}\mathcal{C}_i(A)    
+\end{align*}
+cioè la colonna $j$-esima di $AR^{-1}=Q$ si ottiene come combinazione lineare delle prime $j$ colonne di $A$ ed essendo $Q$ ortogonale questa combinazione lineare ha l'effetto di ortonormalizzare le colonne.\\
+Ma sappiamo dall'algebra lineare che c'è un algoritmo che fa esattamente questo, il procedimento di ortonormalizzare di Gram-Schmidt, che costruisce un set di vettori ortonormali a partire da un set di vettori linearmente indipendenti.\\
+Ovvero dietro la possibilità di fattorizzare come prodotto $QR$ un matrice $m\times n$ con $m\geq n$ e colonne lin. indip. (cioè $rango(A)=n$ c'è il procedimento di Gram-Schmidt. \\
+In pratica questo algoritmo non è stabile in aritmetica floating-point al crescere del numero di vettori, ma ci dice che la fattorizzazione è possibile (e ci sono algoritmi stabili per realizzarlo di cui però non discuteremo, come il metodo delle ``trasformazioni di Householder").\\
+Quello che ci interessa è far vedere come si può usare in modo molto semplice la fattorizzazione $QR$ per risolvere il sistema delle equazioni normali per i minimi quadrati. \\
+Sia $A\in \mathbb{R}^{m\times n}$, $m\geq n$, $rango(A)=n$. Fattorizzando $A=QR$, si ha che
+\begin{equation*}
+    A^tA=(QR)^tQR=R^tQ^tQR=R^tIR=R^tR
+\end{equation*}
+e
+\begin{equation*}
+    A^tb=R^tQ^tb
+\end{equation*}
+quindi il sistema $A^tAx=A^tb$ diventa 
+\begin{equation*}
+    R^tRx=R^tQ^tb
+\end{equation*}
+ma essendo $R$ (e quindi $R^t$) invertibile
+\begin{equation*}
+    (R^t)^{-1}R^tRx=Rx=(R^t)^{-1}R^tQ^tb=Q^tb
+\end{equation*}
+cioè il sistema $A^tAx=A^tb$ equivale al sistema triang. sup.
+\begin{equation*}
+    Rx=d=Q^tb
+\end{equation*}
+che si può facilmente risolvere con la sostituzione all'indietro. \\
+In realtà non c'è un vantaggio sostanziale dal punto di vista del costo computazionale rispetto al calcolo di $A^tA$ e all'applicazione del $meg$/LU (che in questo caso di una matrice simmetrica definita positiva ha una forma semplificata che non discuteremo detta ``fattorizzazione di Cholesky"). \\
+Invece c'è un grosso vantaggio dal punto di vista della stabilità perché si può dimostrare che
+\begin{equation*}
+    k_2(A^tA)=(k_2(A))^2 \gg k_2(R)
+\end{equation*}
+In pratica andremo sempre a risolvere un sistema perturbato
+\begin{equation*}
+    \Tilde{R}\Tilde{x}=\Tilde{d}
+\end{equation*}
+dove però $R$ è condizionata molto meglio di $A^tA$. \\
+Si può infatti dimostrare (non lo faremo per i motivo detti sopra parlando di $k_2(A^tA)$) che $k_2(R)=k_2(A)$. \\
+Per intuirlo, consideriamo di nuovo il caso di $A$ quadrata ($m=n$) e simmetrica: allora da
+\begin{equation*}
+    A=QR
+\end{equation*}
+abbiamo che
+\begin{equation*}
+    \norma{R}_2 = \norma{Q^tA}_2 \leq \norma{Q^t}_2\norma{A}_2 = \norma{A}_2
+\end{equation*}
+perché $Q^t$ è ortogonale e 
+\begin{equation*}
+    \norma{Q^t}_2=\sqrt{max|\lambda_i(QQ^t)|}=\sqrt{max|\lambda_i(I)|}=1
+\end{equation*}
+e allo stesso modo ($Q^{-1}=Q^t$)
+\begin{equation*}
+    \norma{R^{-1}}_2 = \norma{(Q^tA)^{-1}}_2=\norma{A^{-1}Q}_2 \leq \norma{A^{-1}}_2\norma{Q}_2 = \norma{A^{-1}}_2 
+\end{equation*}
+quindi $k_2(R)\leq k_2(A)$ (in realtà si può dire che $k_2(R)=k_2(A)$)
+\end{document}
